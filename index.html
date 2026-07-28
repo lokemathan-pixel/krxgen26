@@ -1,0 +1,3143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>KRXGEN'26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+
+--primary:#f59e0b;
+--secondary:#38bdf8;
+
+--background:#0f172a;
+
+--card:rgba(15,23,42,.62);
+
+--border:rgba(255,255,255,.08);
+
+--text:#ffffff;
+
+--subtext:#cbd5e1;
+
+--shadow:0 15px 40px rgba(0,0,0,.35);
+
+--radius:22px;
+
+}
+/* Update the hero section styling */
+#hero{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:60px;
+
+position:relative;
+
+}
+/* Make sure the text pops on the banner */
+#hero h1{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:82px;
+
+letter-spacing:5px;
+
+margin-bottom:10px;
+
+text-shadow:
+
+0 0 30px rgba(56,189,248,.5);
+
+animation:titleGlow 3s infinite alternate;
+
+}
+#hero p{
+
+font-size:24px;
+
+color:#cbd5e1;
+
+margin-bottom:25px;
+
+}
+
+body{
+
+margin:0;
+
+font-family:'Poppins',sans-serif;
+
+color:#fff;
+
+overflow-x:hidden;
+
+background:
+linear-gradient(
+rgba(7,17,31,.55),
+rgba(7,17,31,.65)
+),
+url("background.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
+
+}
+#loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#0f172a;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:60px;
+
+z-index:99999;
+
+animation:fadeLoader 2s forwards;
+
+}
+
+@keyframes fadeLoader{
+
+0%{
+
+opacity:1;
+
+}
+
+80%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+}
+nav{
+position:sticky;
+top:0;
+z-index:1000;
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:25px;
+
+padding:16px 25px;
+
+background:rgba(15,23,42,.92);
+
+backdrop-filter:blur(18px);
+
+border-top:1px solid rgba(255,255,255,.08);
+border-bottom:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 8px 25px rgba(0,0,0,.35);
+
+transition:.4s;
+}
+
+nav a{
+
+color:#ffffff;
+
+text-decoration:none;
+
+font-family:'Poppins',sans-serif;
+
+font-size:15px;
+
+font-weight:600;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+transition:.35s;
+
+position:relative;
+
+}
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-6px;
+
+width:0;
+
+height:2px;
+
+background:#38bdf8;
+
+transition:.35s;
+
+}
+
+nav a:hover{
+
+color:#38bdf8;
+
+background:rgba(56,189,248,.10);
+
+transform:translateY(-2px);
+
+}
+
+
+nav a:hover::after{
+
+width:100%;
+
+}
+button{
+
+padding:16px 40px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+font-weight:600;
+
+background:linear-gradient(
+135deg,
+#38bdf8,
+#1d9bf0
+);
+
+color:white;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:
+
+0 10px 35px rgba(245,158,11,.4);
+
+}
+
+
+button:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 0 45px rgba(245,158,11,.7);
+
+}
+nav a:hover{
+
+color:#38bdf8;
+
+}
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-6px;
+
+width:0;
+
+height:2px;
+
+background:#f59e0b;
+
+transition:.3s;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+.card{
+
+background:var(--card);
+
+backdrop-filter:blur(18px);
+
+border:1px solid var(--border);
+
+border-radius:var(--radius);
+
+padding:30px;
+
+width:330px;
+
+margin:25px auto;
+
+box-shadow:var(--shadow);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+border-color:var(--secondary);
+
+box-shadow:
+
+0 20px 50px rgba(56,189,248,.25);
+
+}
+nav a:hover{
+
+color:#5ad7ff;
+
+text-shadow:
+0 0 18px rgba(90,215,255,.5);
+
+
+
+}
+
+button:hover{
+
+transform:translateY(-5px);
+
+background:linear-gradient(
+135deg,
+#ffb703,
+#ff8a00
+);
+
+box-shadow:
+
+0 0 20px #38bdf8,
+
+0 0 35px rgba(56,189,248,.4);
+
+}
+html{
+    scroll-behavior:smooth;
+}
+.college-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 45px;
+
+background:rgba(10,15,30,.75);
+
+backdrop-filter:blur(15px);
+
+border-bottom:2px solid rgba(245,158,11,.5);
+
+position:relative;
+
+}
+.college-header::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:3px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #38bdf8,
+    #f59e0b,
+    #38bdf8
+    );
+}
+
+
+.header-logo{
+
+width:82px;
+
+height:82px;
+
+object-fit:contain;
+
+position:relative;
+
+z-index:2;
+
+transition:.4s;
+
+filter:drop-shadow(0 0 12px rgba(255,255,255,.25));
+
+}
+
+.logo-box{
+
+position:relative;
+
+width:110px;
+
+height:110px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.logo-ring{
+
+position:absolute;
+
+inset:0;
+
+border-radius:50%;
+
+border:3px solid transparent;
+
+border-top:3px solid #38bdf8;
+
+border-right:3px solid #f59e0b;
+
+animation:ringRotate 5s linear infinite;
+
+pointer-events:none;
+
+}
+@keyframes ringRotate{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+.logo-box:hover .header-logo{
+
+transform:scale(1.08);
+
+filter:
+
+drop-shadow(0 0 18px #38bdf8)
+
+drop-shadow(0 0 30px #f59e0b);
+
+}
+
+.logo-box:hover .logo-ring{
+
+animation-duration:1.3s;
+
+}
+
+.header-logo:hover{
+
+transform:scale(1.08) rotate(5deg);
+
+border-color:#38bdf8;
+
+box-shadow:
+0 0 25px #38bdf8,
+0 0 60px rgba(56,189,248,.4);
+
+}
+.logo-frame::before{
+    content:"";
+
+    position:absolute;
+
+    width:110%;
+    height:110%;
+
+    border-radius:50%;
+
+    border-top:3px solid #38bdf8;
+    border-right:3px solid #f59e0b;
+
+    animation:spin 8s linear infinite;
+}
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.logo-frame:hover{
+
+transform:translateY(-8px) scale(1.05);
+
+box-shadow:
+
+0 0 20px #38bdf8,
+
+0 0 40px rgba(245,158,11,.4);
+
+}
+.logo-frame{
+    width:95px;
+    height:95px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.08);
+
+    border:2px solid rgba(56,189,248,0.5);
+
+    box-shadow:
+    0 0 15px rgba(56,189,248,0.25);
+
+    transition:all 0.4s ease;
+}
+.logo-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    background:rgba(255,255,255,0.05);
+
+    padding:10px;
+    border-radius:20px;
+}
+
+.college-info{
+    flex:1;
+    text-align:center;
+}
+
+.college-info h1{
+
+margin:0;
+
+font-family:'Orbitron',sans-serif;
+
+font-size:38px;
+
+letter-spacing:2px;
+
+font-weight:800;
+
+background:linear-gradient(90deg,#ffffff,#38bdf8,#f59e0b);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+text-shadow:0 0 25px rgba(56,189,248,.25);
+
+}
+.college-info p{
+
+margin-top:6px;
+
+font-size:17px;
+
+color:#cbd5e1;
+
+letter-spacing:1px;
+
+}
+.college-header{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:18px 45px;
+
+background:rgba(15,23,42,.82);
+
+backdrop-filter:blur(16px);
+
+border-bottom:2px solid rgba(245,158,11,.35);
+
+box-shadow:0 8px 35px rgba(0,0,0,.45);
+
+position:relative;
+
+overflow:hidden;
+
+}
+section{
+padding:50px 20px;
+}
+.card h3{
+    color:#ffd700;
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.card p{
+    line-height:1.8;
+    font-size:16px;
+    text-align:justify;
+}
+.theme-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.theme-card{
+    background:rgba(245,158,11,0.15);
+
+border:1px solid rgba(245,158,11,0.4);
+    backdrop-filter:blur(8px);
+
+    width:320px;
+    min-height:350px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+.highlights-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+.card{
+border-top:4px solid #f59e0b;
+}
+.logo-frame{
+    width:120px;
+    height:120px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+
+    border:2px solid rgba(56,189,248,.35);
+
+    box-shadow:
+    0 0 15px rgba(56,189,248,.25),
+    inset 0 0 20px rgba(255,255,255,.04);
+
+    transition:.5s;
+}
+
+.logo-frame:hover{
+
+transform:translateY(-8px) scale(1.05);
+
+box-shadow:
+0 0 25px #38bdf8,
+0 0 45px rgba(245,158,11,.35);
+
+}
+/* ---------- Section ---------- */
+
+section{
+    padding:70px 8%;
+}
+
+section h2{
+    font-size:40px;
+    font-family:'Orbitron',sans-serif;
+    color:#38bdf8;
+    margin-bottom:40px;
+}
+
+/* ---------- About ---------- */
+
+.about-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:50px;
+
+    flex-wrap:wrap;
+}
+
+.about-text{
+
+    flex:1;
+
+    min-width:350px;
+
+    text-align:left;
+
+    line-height:34px;
+
+    font-size:18px;
+
+    color:#e2e8f0;
+
+}
+
+.about-boxes{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+/* ---------- Theme Cards ---------- */
+
+/*==================================================
+
+        PREMIUM SCROLL THEMES
+
+==================================================*/
+
+.themes-section{
+
+height:320vh;
+
+position:relative;
+
+background:transparent;
+
+}
+
+.section-title{
+
+font-size:55px;
+
+font-family:'Orbitron';
+
+text-align:center;
+
+margin-bottom:60px;
+
+color:white;
+
+text-shadow:0 0 25px rgba(56,189,248,.4);
+
+}
+
+.themes-sticky{
+
+position:sticky;
+
+top:0;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+.themes-container{
+
+position:relative;
+
+width:85%;
+
+max-width:1200px;
+
+height:650px;
+
+}
+
+.theme-panel{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+border-radius:30px;
+
+background:#111827;
+
+opacity:0;
+
+transform:translateY(120px);
+
+transition:
+
+opacity .8s,
+
+transform .8s;
+
+box-shadow:
+
+0 35px 80px rgba(0,0,0,.45);
+
+}
+
+.theme-panel.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+z-index:5;
+
+}
+.theme-image{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+}
+
+.theme-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+filter:
+
+brightness(.45);
+
+transition:1.2s;
+
+}
+
+.theme-panel.active img{
+
+transform:scale(1.08);
+
+}
+
+.theme-image::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+rgba(15,23,42,.82),
+
+rgba(15,23,42,.2)
+
+);
+
+}
+.theme-panel img{
+
+transition:
+
+transform 1.4s ease,
+
+filter 1s;
+
+}
+
+.active img{
+
+transform:scale(1.08);
+
+filter:brightness(.45);
+
+}
+
+.previous img{
+
+transform:scale(1.18);
+
+filter:brightness(.25);
+
+}
+
+.theme-text{
+
+position:absolute;
+
+left:70px;
+
+bottom:70px;
+
+z-index:10;
+
+max-width:550px;
+
+}
+
+.theme-number{
+
+display:block;
+
+font-size:90px;
+
+font-family:'Orbitron';
+
+color:rgba(255,255,255,.12);
+
+margin-bottom:15px;
+
+}
+
+.theme-text h3{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+color:white;
+
+font-family:'Orbitron';
+
+}
+
+.theme-text p{
+
+font-size:20px;
+
+line-height:38px;
+
+color:#dbeafe;
+
+}
+
+.theme-panel::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:45%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.18),
+
+transparent
+
+);
+
+transform:skewX(-25deg);
+
+transition:1s;
+
+}
+
+.theme-panel:hover::before{
+
+left:140%;
+
+}
+
+.theme-panel{
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+}
+
+.theme-panel:hover{
+
+box-shadow:
+
+0 0 40px rgba(56,189,248,.25),
+
+0 0 70px rgba(245,158,11,.18);
+
+}
+
+.previous{
+
+opacity:.25;
+
+transform:translateY(-120%) scale(.92);
+
+z-index:1;
+
+}
+
+.next{
+
+opacity:0;
+
+transform:translateY(120%);
+
+z-index:0;
+
+}
+
+.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+z-index:5;
+
+}
+/* ---------- Highlights ---------- */
+
+.highlight-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+.highlight-card{
+
+background:rgba(255,255,255,.05);
+
+border-radius:20px;
+
+padding:30px;
+
+transition:.35s;
+
+font-size:20px;
+
+font-weight:600;
+
+}
+
+.highlight-card:hover{
+
+background:#38bdf8;
+
+color:#0f172a;
+
+transform:translateY(-8px);
+
+}
+/* ================= Timeline ================= */
+
+.timeline{
+
+max-width:900px;
+
+margin:auto;
+
+position:relative;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:0;
+
+width:4px;
+
+height:100%;
+
+background:#38bdf8;
+
+transform:translateX(-50%);
+
+}
+
+.timeline-item{
+
+width:45%;
+
+padding:25px;
+
+margin:30px 0;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(10px);
+
+border-radius:18px;
+
+position:relative;
+
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+}
+
+.timeline-item:nth-child(odd){
+
+left:0;
+
+text-align:right;
+
+}
+
+.timeline-item:nth-child(even){
+
+left:55%;
+
+text-align:left;
+
+}
+
+.timeline-item::after{
+
+content:"";
+
+position:absolute;
+
+top:35px;
+
+width:18px;
+
+height:18px;
+
+background:#f59e0b;
+
+border-radius:50%;
+
+border:4px solid white;
+
+}
+
+.timeline-item:nth-child(odd)::after{
+
+right:-38px;
+
+}
+
+.timeline-item:nth-child(even)::after{
+
+left:-38px;
+
+}
+
+/* ================= Prize ================= */
+
+.prize-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+.prize-card{
+
+background:rgba(255,255,255,.05);
+
+padding:35px;
+
+border-radius:20px;
+
+transition:.4s;
+
+}
+
+.prize-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 10px 35px rgba(245,158,11,.35);
+
+}
+
+.prize-card h3{
+
+font-size:28px;
+
+color:#f59e0b;
+
+}
+
+/* ================= Payment ================= */
+
+.payment-container{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+align-items:center;
+
+}
+
+.payment-box{
+
+background:rgba(255,255,255,.05);
+
+padding:30px;
+
+border-radius:20px;
+
+width:340px;
+
+backdrop-filter:blur(12px);
+
+}
+
+.payment-box img{
+
+width:230px;
+
+border-radius:12px;
+
+margin:15px 0;
+
+}
+/* ================= CONTACT ================= */
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+margin-top:40px;
+
+}
+
+.contact-card{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.1);
+
+border-radius:20px;
+
+padding:35px;
+
+transition:.35s;
+
+}
+
+.contact-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(56,189,248,.25);
+
+}
+
+.contact-card h3{
+
+color:#38bdf8;
+
+margin-bottom:25px;
+
+font-size:24px;
+
+}
+
+.contact-card p{
+
+line-height:30px;
+
+color:#e2e8f0;
+
+}
+
+/* ================= REGISTER ================= */
+
+.register-box{
+
+max-width:900px;
+
+margin:auto;
+
+padding:50px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(15px);
+
+border-radius:25px;
+
+}
+
+/* ================= FAQ ================= */
+
+details{
+
+max-width:900px;
+
+margin:20px auto;
+
+background:rgba(255,255,255,.05);
+
+padding:18px 25px;
+
+border-radius:15px;
+
+cursor:pointer;
+
+text-align:left;
+
+transition:.3s;
+
+}
+
+summary{
+
+font-size:19px;
+
+font-weight:600;
+
+color:#38bdf8;
+
+}
+
+details p{
+
+margin-top:18px;
+
+line-height:30px;
+
+color:#cbd5e1;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+margin-top:80px;
+
+padding:50px 8%;
+
+background:#08111f;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:35px;
+
+text-align:left;
+
+}
+
+.footer-grid h3{
+
+color:#38bdf8;
+
+margin-bottom:15px;
+
+}
+
+.footer-grid p{
+
+color:#cbd5e1;
+
+line-height:30px;
+
+}
+
+.footer-bottom{
+
+margin-top:40px;
+
+padding-top:20px;
+
+border-top:1px solid rgba(255,255,255,.1);
+
+text-align:center;
+
+color:#94a3b8;
+
+}
+/*================ Scroll Animation ================*/
+
+.hidden{
+opacity:0;
+transform:translateY(60px);
+transition:all .8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+#topBtn{
+
+position:fixed;
+
+right:30px;
+
+bottom:30px;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:#38bdf8;
+
+color:white;
+
+font-size:22px;
+
+display:none;
+
+z-index:999;
+
+box-shadow:0 0 20px rgba(56,189,248,.5);
+
+}
+
+#topBtn:hover{
+
+background:#f59e0b;
+
+transform:scale(1.1);
+
+}
+.pulse{
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+@media(max-width:768px){
+
+.college-header{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+.about-container{
+
+flex-direction:column;
+
+}
+
+.payment-container{
+
+flex-direction:column;
+
+}
+
+.timeline::before{
+
+display:none;
+
+}
+
+.timeline-item{
+
+width:100%;
+
+left:0!important;
+
+text-align:left;
+
+}
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+body::before{
+
+content:"";
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:
+radial-gradient(circle at 20% 30%,rgba(56,189,248,.18),transparent 40%),
+radial-gradient(circle at 80% 70%,rgba(245,158,11,.18),transparent 35%);
+
+animation:bgmove 12s ease-in-out infinite alternate;
+
+z-index:-1;
+
+}
+
+@keyframes bgmove{
+
+from{
+
+transform:translateY(-20px);
+
+}
+
+to{
+
+transform:translateY(20px);
+
+}
+
+}
+@keyframes titleGlow{
+
+from{
+
+text-shadow:0 0 10px #38bdf8;
+
+}
+
+to{
+
+text-shadow:
+
+0 0 35px #38bdf8,
+
+0 0 60px #38bdf8;
+
+}
+
+}
+#hero>*{
+
+animation:heroReveal .8s ease forwards;
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+#hero h1{
+animation:heroReveal .8s ease forwards,
+           titleGlow 3s infinite alternate;
+animation-delay:0.2s,1s;
+}
+
+#hero p{
+animation-delay:.5s;
+}
+
+#hero button{
+animation-delay:.8s;
+}
+
+#countdown{
+animation-delay:1.1s;
+}
+
+@keyframes heroReveal{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at 20% 30%,rgba(56,189,248,.18),transparent 35%),
+
+radial-gradient(circle at 80% 70%,rgba(245,158,11,.18),transparent 30%);
+
+animation:bgFloat 14s ease-in-out infinite alternate;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+@keyframes bgFloat{
+
+from{
+
+transform:translateY(-30px);
+
+}
+
+to{
+
+transform:translateY(30px);
+
+}
+
+}
+body::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+
+linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+
+linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+
+background-size:45px 45px;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+.glow{
+
+position:fixed;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.22;
+
+pointer-events:none;
+
+z-index:-1;
+
+animation:floatGlow 12s ease-in-out infinite alternate;
+
+}
+
+.glow1{
+
+width:420px;
+
+height:420px;
+
+background:#38bdf8;
+
+top:-120px;
+
+left:-120px;
+
+}
+
+.glow2{
+
+width:350px;
+
+height:350px;
+
+background:#f59e0b;
+
+bottom:-120px;
+
+right:-80px;
+
+animation-delay:4s;
+
+}
+
+.hero-badge{
+
+display:inline-block;
+
+padding:12px 30px;
+
+border-radius:50px;
+
+background:rgba(56,189,248,.12);
+
+border:1px solid rgba(56,189,248,.4);
+
+color:#38bdf8;
+
+letter-spacing:2px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+}
+
+.hero-title{
+
+font-size:90px;
+
+font-family:'Orbitron';
+
+margin:0;
+
+}
+
+.hero-tagline{
+
+font-size:28px;
+
+color:#f59e0b;
+
+margin:20px 0;
+
+}
+
+.hero-info{
+
+display:flex;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+margin:35px 0;
+
+}
+
+.hero-info div{
+
+padding:16px 30px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(15px);
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+margin:40px 0;
+
+}
+
+.outline-btn{
+
+background:transparent;
+
+border:2px solid #38bdf8;
+
+}
+
+@keyframes floatGlow{
+
+from{
+
+transform:translateY(-20px);
+
+}
+
+to{
+
+transform:translateY(35px);
+
+}
+
+}
+/* ================= PREMIUM LOADER ================= */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#07111f;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+overflow:hidden;
+transition:1s;
+}
+
+.loader-container{
+text-align:center;
+position:relative;
+}
+
+.ring{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+border-radius:50%;
+}
+
+.ring1{
+width:180px;
+height:180px;
+border:4px solid transparent;
+border-top:4px solid #38bdf8;
+border-right:4px solid #38bdf8;
+animation:spin 3s linear infinite;
+box-shadow:0 0 25px #38bdf8;
+}
+
+.ring2{
+width:140px;
+height:140px;
+border:4px solid transparent;
+border-bottom:4px solid #f59e0b;
+border-left:4px solid #f59e0b;
+animation:spinReverse 2.5s linear infinite;
+box-shadow:0 0 20px #f59e0b;
+}
+
+.ring3{
+width:100px;
+height:100px;
+border:3px dashed rgba(255,255,255,.5);
+animation:spin 6s linear infinite;
+}
+
+.center-dot{
+width:18px;
+height:18px;
+background:#fff;
+border-radius:50%;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+box-shadow:0 0 25px #38bdf8;
+}
+
+.loader-container h1{
+margin-top:160px;
+font-size:52px;
+font-family:'Orbitron',sans-serif;
+letter-spacing:5px;
+color:#fff;
+text-shadow:0 0 20px #38bdf8;
+}
+
+.loader-container p{
+color:#cbd5e1;
+font-size:18px;
+margin-top:10px;
+margin-bottom:30px;
+}
+
+.progress{
+width:320px;
+height:8px;
+background:rgba(255,255,255,.12);
+border-radius:20px;
+overflow:hidden;
+margin:auto;
+}
+
+.progress-bar{
+width:0%;
+height:100%;
+background:linear-gradient(90deg,#38bdf8,#f59e0b);
+animation:loading 3s forwards;
+}
+
+@keyframes spin{
+100%{
+transform:translate(-50%,-50%) rotate(360deg);
+}
+}
+
+@keyframes spinReverse{
+100%{
+transform:translate(-50%,-50%) rotate(-360deg);
+}
+}
+
+@keyframes loading{
+0%{
+width:0%;
+}
+100%{
+width:100%;
+}
+}
+.hero-title{
+
+font-family:'Orbitron';
+
+font-size:78px;
+
+letter-spacing:5px;
+
+margin-bottom:10px;
+
+text-shadow:
+
+0 0 20px rgba(56,189,248,.45);
+
+animation:titleGlow 3s infinite alternate;
+
+}
+
+.hero-sub{
+
+font-weight:500;
+
+letter-spacing:2px;
+
+color:var(--secondary);
+
+margin-top:0;
+
+margin-bottom:20px;
+
+}
+
+@keyframes titleGlow{
+
+from{
+
+text-shadow:0 0 10px var(--secondary);
+
+}
+
+to{
+
+text-shadow:
+
+0 0 30px var(--secondary),
+
+0 0 70px var(--secondary);
+
+}
+
+}
+.limited-slots{
+display:inline-block;
+margin-top:20px;
+padding:12px 28px;
+border-radius:40px;
+background:rgba(245,158,11,.15);
+border:1px solid #f59e0b;
+color:#f59e0b;
+font-weight:600;
+font-size:18px;
+box-shadow:0 0 20px rgba(245,158,11,.25);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.03);
+}
+}
+
+/* ================= HERO BUTTONS ================= */
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
+
+.hero-buttons button{
+    min-width:220px;
+    padding:16px 28px;
+    font-size:17px;
+    font-weight:600;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.35s;
+}
+
+/* Register */
+
+.hero-buttons button:first-child{
+    background:linear-gradient(135deg,#38bdf8,#1d9bf0);
+    color:white;
+}
+
+/* Brochure */
+
+.outline-btn{
+    background:transparent;
+    border:2px solid #38bdf8;
+    color:white;
+}
+
+/* Rules */
+
+.rules-btn{
+    background:transparent;
+    border:2px solid #f59e0b;
+    color:white;
+}
+
+/* Hover */
+
+.hero-buttons button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(56,189,248,.4);
+}
+</style>
+
+</head>
+
+
+<body>
+<div class="glow glow1"></div>
+
+<div class="glow glow2"></div>
+<div id="loader">
+    <div class="loader-container">
+
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+
+        <div class="center-dot"></div>
+
+        <h1>KRXGEN'26</h1>
+        <p>Engineering the Future</p>
+
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+<div class="college-header">
+
+    <div class="logo-frame">
+    <div class="logo-box">
+
+<div class="logo-ring"></div>
+
+<img src="logo-left.png" class="header-logo">
+
+</div>
+</div>
+
+    <div class="college-info">
+        <h1>K. RAMAKRISHNAN COLLEGE OF ENGINEERING</h1>
+        <div class="title-line"></div>
+        <p>(Autonomous)</p>
+        <p>Department of Mechanical Engineering</p>
+    </div>
+
+   <div class="logo-frame">
+    <div class="logo-box">
+
+<div class="logo-ring"></div>
+
+<img src="logo-right.png" class="header-logo">
+
+</div>
+</div>
+
+</div>
+
+<nav>
+<a href="#hero">Home</a>
+<a href="#about">About</a>
+<a href="#tracks">Themes</a>
+<a href="#highlights">Highlights</a>
+<a href="#timeline">Timeline</a>
+<a href="#payment">Payment</a>
+<a href="#prizes">Prizes</a>
+<a href="#team">Contact</a>
+<a href="#register">Register</a>
+<a href="#faq">FAQ</a>
+</nav>
+
+
+<section id="hero">
+
+<p style="
+color:#38bdf8;
+font-size:18px;
+letter-spacing:3px;
+font-weight:600;
+">
+<div class="hero-banner">
+    <img src="krx_main.jpg" alt="KRXGEN Banner">
+</div>
+
+
+
+</p>
+
+<h1 style="
+font-size:75px;
+margin:10px;
+font-family:'Orbitron',sans-serif;
+color:white;
+text-shadow:0 0 20px rgba(56,189,248,.4);
+">
+
+⚙️ KRXGEN'26
+
+</h1>
+
+<p style="
+font-size:28px;
+color:#f59e0b;
+font-weight:600;
+">
+
+
+
+</p>
+
+<p style="
+font-size:18px;
+color:#cbd5e1;
+line-height:32px;
+">
+
+📅 27–28 August 2026
+
+<br>
+
+📍 K. Ramakrishnan College of Engineering
+
+</p>
+
+
+<div class="hero-buttons">
+
+    <button onclick="window.open('https://forms.gle/mAiFu3Ftp88AFNjs7','_blank')">
+        📝 Register Now
+    </button>
+
+    <button onclick="window.open('brochure.pdf','_blank')" class="outline-btn">
+        📄 Download Brochure
+    </button>
+
+    <button onclick="window.open('rules.html','_blank')" class="rules-btn">
+        📋 Rules & Regulations
+    </button>
+<div id="slotBox" style="
+    margin-top:20px;
+    padding:15px;
+    background:#0f172a;
+    border:2px solid #38bdf8;
+    border-radius:12px;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    display:inline-block;
+">
+    Loading Slots...
+</div>
+</div>
+
+<br>
+
+<h2 id="countdown" style="
+display:inline-block;
+padding:18px 40px;
+margin-top:30px;
+border-radius:50px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.15);
+color:#f59e0b;
+font-size:24px;
+"></h2>
+
+</section>
+<div class="limited-slots">
+    ⚡ Limited Registration – Only 30 Teams Will Be Accepted
+</div>
+<section style="padding:40px 20px;">
+
+<div style="display:flex;
+justify-content:center;
+gap:35px;
+flex-wrap:wrap;">
+
+<div class="card">
+
+<h2>24</h2>
+
+<p>Hours</p>
+
+</div>
+
+<div class="card">
+
+<h2>30</h2>
+
+<p>Teams</p>
+
+</div>
+
+<div class="card">
+
+<h2>3–4</h2>
+
+<p>Members / Team</p>
+
+</div>
+
+<div class="card">
+
+<h2>₹500</h2>
+
+<p>Registration Fee</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="about" class="hidden">
+
+<h2>About KRXGEN'26</h2>
+
+<div class="about-container">
+
+<div class="about-text">
+
+<p>
+
+KRXGEN'26 is a National Level 24-Hour Hackathon organized by the Department of Mechanical Engineering, K. Ramakrishnan College of Engineering.
+
+<br><br>
+
+The event aims to inspire students to transform innovative ideas into practical engineering solutions through collaboration, creativity, design thinking, and technology.
+
+<br><br>
+
+Participants will work in teams to solve real-world industrial challenges under expert mentorship and present their innovative prototypes before an experienced jury panel.
+
+</p>
+
+</div>
+
+<div class="about-boxes">
+
+<div class="card">
+
+<h2>24</h2>
+
+<p>Hours</p>
+
+</div>
+
+<div class="card">
+
+<h2>30</h2>
+
+<p>Teams</p>
+
+</div>
+
+<div class="card">
+
+<h2>3–4</h2>
+
+<p>Members</p>
+
+</div>
+
+<div class="card">
+
+<h2>3</h2>
+
+<p>Innovation Themes</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="tracks" class="themes-section">
+
+<h2 class="section-title">Innovation Themes</h2>
+
+<div class="themes-sticky">
+
+    <div class="themes-container">
+
+        <!-- Theme 1 -->
+        <div class="theme-panel active">
+
+            <div class="theme-image">
+                <img src="sustainable energy.jpg" alt="">
+            </div>
+
+            <div class="theme-text">
+
+                <span class="theme-number">01</span>
+
+                <h3>Sustainable Energy Technology</h3>
+
+                <p>
+                    Renewable Energy<br>
+                    Smart Grid<br>
+                    Green Engineering<br>
+                    Future Power Systems
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Theme 2 -->
+        <div class="theme-panel">
+
+            <div class="theme-image">
+                <img src="ar_vr.jpg" alt="">
+            </div>
+
+            <div class="theme-text">
+
+                <span class="theme-number">02</span>
+
+                <h3>Augmented Reality & Virtual Reality</h3>
+
+                <p>
+                    Digital Twin<br>
+                    Immersive Learning<br>
+                    Smart Manufacturing<br>
+                    Simulation Technology
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Theme 3 -->
+        <div class="theme-panel">
+
+            <div class="theme-image">
+                <img src="indust_6.jpg" alt="">
+            </div>
+
+            <div class="theme-text">
+
+                <span class="theme-number">03</span>
+
+                <h3>Industrial Development 5.0 & 6.0</h3>
+
+                <p>
+                    AI Automation<br>
+                    Smart Factory<br>
+                    Robotics<br>
+                    Industrial IoT
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+<section id="highlights" class="hidden">
+
+<h2>Hackathon Highlights</h2>
+
+<div class="highlight-grid">
+
+<div class="highlight-card">
+
+<img src="images/idea.jpg">
+
+<div class="highlight-content">
+
+<h3>💡 Idea Presentation</h3>
+
+<p>
+Present innovative engineering ideas before expert mentors.
+</p>
+
+<span>Explore →</span>
+
+</div>
+
+</div>
+
+<div class="highlight-card">
+
+<img src="images/prototype.jpg">
+
+<div class="highlight-content">
+
+<h3>🛠 Prototype Development</h3>
+
+<p>
+Convert your ideas into functional prototypes.
+</p>
+
+<span>Explore →</span>
+
+</div>
+
+</div>
+
+<div class="highlight-card">
+
+<img src="images/mentor.jpg">
+
+<div class="highlight-content">
+
+<h3>🎓 Expert Mentoring</h3>
+
+<p>
+Receive guidance from experienced faculty and industry experts.
+</p>
+
+<span>Explore →</span>
+
+</div>
+
+</div>
+
+<div class="highlight-card">
+
+<img src="images/showcase.jpg">
+
+<div class="highlight-content">
+
+<h3>🚀 Prototype Showcase</h3>
+
+<p>
+Demonstrate your innovation before the jury panel.
+</p>
+
+<span>Explore →</span>
+
+</div>
+
+</div>
+
+<div class="highlight-card">
+
+<img src="images/evaluation.jpg">
+
+<div class="highlight-content">
+
+<h3>🏆 Panel Evaluation</h3>
+
+<p>
+Projects will be evaluated by an expert jury.
+</p>
+
+<span>Explore →</span>
+
+</div>
+
+</div>
+
+<div class="highlight-card">
+
+<img src="images/prize.jpg">
+
+<div class="highlight-content">
+
+<h3>💰 Cash Prizes</h3>
+
+<p>
+Win exciting prizes and recognition for your innovation.
+</p>
+
+<span>Explore →</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="timeline" class="hidden">
+
+<h2>Event Timeline</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>📅 Registration Opens</h3>
+
+<p>Applications are now open.</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>📝 Registration Closes</h3>
+
+<p>16 August 2026</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>🚀 Hackathon Begins</h3>
+
+<p>27 August 2026</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>🏆 Final Evaluation</h3>
+
+<p>28 August 2026</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="payment" class="hidden">
+
+<h2>Registration Fee & Payment</h2>
+
+<div class="payment-container">
+
+<div class="payment-box">
+
+<h3>Registration Details</h3>
+
+<p>
+
+<strong>Fee :</strong> ₹200 / Team
+
+<br><br>
+
+Team Size : 3–4 Members
+
+<br><br>
+
+Upload payment screenshot during registration.
+
+</p>
+
+</div>
+
+<div class="payment-box">
+
+<h3>Scan & Pay</h3>
+
+<img src="qr.png">
+
+<p>
+
+<strong>UPI ID</strong>
+
+<br>
+
+yourupi@bank
+
+<br><br>
+
+<strong>Account No.</strong>
+
+<br>
+
+XXXXXXXXXX
+
+<br><br>
+
+<strong>IFSC</strong>
+
+<br>
+
+XXXXXXXX
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="prizes" class="hidden">
+
+<h2>Prize Pool</h2>
+
+<div class="prize-grid">
+
+<div class="prize-card">
+
+<h3>🥇 Winner</h3>
+
+<p>
+
+Cash Prize
+
+<br><br>
+
+Certificate of Excellence
+
+<br><br>
+
+Winner Trophy
+
+</p>
+
+</div>
+
+<div class="prize-card">
+
+<h3>🥈 Runner-Up</h3>
+
+<p>
+
+Cash Prize
+
+<br><br>
+
+Certificate
+
+<br><br>
+
+Runner-Up Trophy
+
+</p>
+
+</div>
+
+<div class="prize-card">
+
+<h3>🎖 Participation</h3>
+
+<p>
+
+Participation Certificate
+
+<br><br>
+
+Networking
+
+<br><br>
+
+Learning Experience
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="team" class="hidden">
+
+<h2>Contact Us</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>👨‍🏫 Faculty Coordinators</h3>
+
+<p>
+
+Mr. S. Sivananthan
+
+<br>
+
+Assistant Professor
+
+<br>
+
+📞 +91 99522 58040
+
+<br><br>
+
+Dr. B. Prakash
+
+<br>
+
+Assistant Professor
+
+<br>
+
+📞 +91 97906 33989
+
+</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>👨‍🎓 Student Coordinators</h3>
+
+<p>
+
+Mr. V. Devprasaad
+
+<br>
+
+📞 +91 63812 23980
+
+<br><br>
+
+Mr. E. Larshad
+
+<br>
+
+📞 +91 90809 26625
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="register">
+
+<h2>Register Your Team</h2>
+
+<h3 style="color:#f59e0b;font-size:28px;">
+Maximum Capacity: 30 Teams
+</h3>
+
+<p style="color:#cbd5e1;font-size:18px;">
+Registrations are accepted on a first-come, first-served basis.
+Once 30 teams are registered, the registration portal will be closed.
+</p>
+
+<button onclick="window.open('https://forms.gle/mAiFu3Ftp88AFNjs7','_blank')">
+Register Now
+</button>
+
+</section>
+
+<section id="faq" class="hidden">
+
+<h2>Frequently Asked Questions</h2>
+
+<details>
+
+<summary>Who can participate?</summary>
+
+<p>
+
+Students from any recognized Engineering or Polytechnic institution are eligible.
+
+</p>
+
+</details>
+
+<details>
+
+<summary>How many members are allowed in a team?</summary>
+
+<p>
+
+Each team must consist of 3–4 members.
+
+</p>
+
+</details>
+
+<details>
+
+<summary>What is the registration fee?</summary>
+
+<p>
+
+₹200 per team.
+
+</p>
+
+</details>
+
+<details>
+
+<summary>Will certificates be provided?</summary>
+
+<p>
+
+Participation certificates will be provided to every registered participant.
+
+</p>
+
+</details>
+
+<details>
+
+<summary>Can we register after the deadline?</summary>
+
+<p>
+
+No. Registrations close on 16 August 2026.
+
+</p>
+
+</details>
+
+</section>
+<button id="topBtn">
+
+⬆
+
+</button>
+<footer style="background:rgba(0,0,0,0.7);padding:20px;margin-top:50px;">
+
+<p>
+© 2026 KRXGEN'26 | Department of Mechanical Engineering |
+K. Ramakrishnan College of Engineering
+</p>
+
+</footer>
+<script>
+
+console.log("KRXGEN'26 Website Loaded");
+const eventDate = new Date("August 16, 2026 23:59:59").getTime();
+
+setInterval(() => {
+    let now = new Date().getTime();
+    let distance = eventDate - now;
+
+    let days = Math.floor(distance/(1000*60*60*24));
+
+   document.getElementById("countdown").innerHTML =
+"📅 Registration Ends In: " + days + " Days";
+},1000);
+let topBtn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+
+if(document.documentElement.scrollTop>300){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+}
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+const hiddenElements=document.querySelectorAll(".hidden");
+
+hiddenElements.forEach((el)=>observer.observe(el));
+
+
+</script>
+<script>
+
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+const loader=document.getElementById("loader");
+
+loader.style.opacity="0";
+loader.style.visibility="hidden";
+
+},3200);
+
+});
+/*==================================================
+        PREMIUM SCROLL THEMES
+==================================================*/
+
+const themeSection = document.querySelector(".themes-section");
+const panels = document.querySelectorAll(".theme-panel");
+
+let currentPanel = 0;
+let ticking = false;
+
+function updatePanels(index){
+
+    panels.forEach((panel,i)=>{
+
+        panel.classList.remove("active","previous","next");
+
+        if(i < index){
+            panel.classList.add("previous");
+        }
+        else if(i > index){
+            panel.classList.add("next");
+        }
+        else{
+            panel.classList.add("active");
+        }
+
+    });
+
+}
+
+updatePanels(0);
+
+window.addEventListener("scroll",()=>{
+
+    if(ticking) return;
+
+    ticking=true;
+
+    requestAnimationFrame(()=>{
+
+        const rect = themeSection.getBoundingClientRect();
+
+        const sectionHeight = themeSection.offsetHeight-window.innerHeight;
+
+        const progress = Math.min(
+            Math.max(-rect.top/sectionHeight,0),
+            1
+        );
+
+        const index = Math.min(
+            panels.length-1,
+            Math.floor(progress*panels.length)
+        );
+
+        if(index!==currentPanel){
+
+            currentPanel=index;
+
+            updatePanels(currentPanel);
+
+        }
+
+        ticking=false;
+
+    });
+
+});
+
+fetch("https://script.google.com/macros/s/AKfycbzZBzIx6j0a3lWu5V3VF_1Ihf9aNmx7UHLoFnDRlM62OWVKIU-j_D5uwB74yt2iJGIp/exec")
+.then(r=>r.json())
+.then(data=>{
+
+if(data.closed){
+
+document.getElementById("slotBox").innerHTML=
+"<h2 style='color:red'>🔴 Registration Closed</h2>";
+
+}
+else{
+
+document.getElementById("slotBox").innerHTML=
+`
+<h2>Remaining Slots</h2>
+<h1>${data.remaining}/30</h1>
+`;
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>

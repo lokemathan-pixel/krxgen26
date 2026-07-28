@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KRXGEN'26 Rules & Regulations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#07111f;
+color:white;
+background-image:
+linear-gradient(rgba(7,17,31,.9),rgba(7,17,31,.9)),
+url("background.jpg");
+background-size:cover;
+background-attachment:fixed;
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+
+linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+
+linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+
+background-size:45px 45px;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+background:
+linear-gradient(rgba(7,17,31,.65),rgba(7,17,31,.75)),
+url("industry6.jpg");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+header::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%,rgba(56,189,248,.25),transparent),
+radial-gradient(circle at 80% 70%,rgba(245,158,11,.25),transparent);
+animation:bgMove 10s infinite alternate;
+}
+
+@keyframes bgMove{
+
+from{
+transform:translateY(-30px);
+}
+
+to{
+transform:translateY(30px);
+}
+
+}
+
+header h1{
+font-family:'Orbitron';
+font-size:60px;
+color:#38bdf8;
+text-shadow:0 0 25px #38bdf8;
+}
+
+header p{
+margin-top:15px;
+font-size:20px;
+color:#f59e0b;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding-bottom:60px;
+}
+
+.theme{
+margin-bottom:60px;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+padding:35px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px rgba(0,0,0,.3);
+}
+
+.theme h2{
+font-family:'Orbitron';
+color:#38bdf8;
+margin-bottom:25px;
+font-size:32px;
+}
+
+.theme h3{
+margin-top:25px;
+margin-bottom:12px;
+color:#f59e0b;
+}
+
+.theme p{
+line-height:30px;
+color:#dbeafe;
+}
+
+.theme ul{
+padding-left:25px;
+line-height:30px;
+}
+
+.theme li{
+margin-bottom:8px;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+th{
+background:#38bdf8;
+color:#07111f;
+padding:15px;
+}
+
+td{
+padding:15px;
+border:1px solid rgba(255,255,255,.15);
+}
+
+tr:nth-child(even){
+background:rgba(255,255,255,.05);
+}
+
+.back{
+display:inline-block;
+margin-top:40px;
+padding:15px 35px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+transition:.3s;
+}
+
+.back:hover{
+background:#f59e0b;
+}
+
+footer{
+padding:25px;
+text-align:center;
+background:#08111f;
+margin-top:40px;
+color:#94a3b8;
+}
+
+.card{
+
+transition:.45s;
+
+}
+
+.card:hover{
+
+transform:
+
+translateY(-12px)
+
+scale(1.02);
+
+box-shadow:
+
+0 0 40px rgba(56,189,248,.35);
+
+}
+
+.rule-nav{
+
+position:fixed;
+
+top:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+display:flex;
+
+gap:20px;
+
+padding:15px 30px;
+
+background:rgba(15,23,42,.6);
+
+backdrop-filter:blur(20px);
+
+border-radius:50px;
+
+z-index:1000;
+
+}
+
+.rule-nav a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.rule-nav a:hover{
+
+color:#38bdf8;
+
+}
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(100px);
+
+transition:1s;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+#progressBar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:0;
+
+background:linear-gradient(90deg,#38bdf8,#f59e0b);
+
+z-index:9999;
+
+}
+
+.themeBadge{
+
+position:fixed;
+
+top:100px;
+
+right:30px;
+
+padding:15px 25px;
+
+background:#38bdf8;
+
+border-radius:40px;
+
+font-weight:bold;
+
+animation:float 3s infinite;
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+
+.theme{
+    scroll-margin-top:100px;
+}
+
+</style>
+</head>
+
+<body>
+<nav class="rule-nav">
+
+<a href="index.html">← Home</a>
+
+<a href="#theme1">Sustainable Energy</a>
+
+<a href="#theme2">AR / VR</a>
+
+<a href="#theme3">Industry 5.0 & 6.0</a>
+
+</nav>
+<header>
+
+<h1>KRXGEN'26</h1>
+
+<p>Official Rules & Regulations</p>
+
+</header>
+
+<div class="container">
+    <div id="progressBar"></div>
+
+<!-- ====================== THEME 1 ====================== -->
+
+<section class="theme reveal" id="theme1">
+
+<h2>Theme 1 – Sustainable Energy Technology</h2>
+
+<h3>Theme Objective</h3>
+
+<p>
+Develop innovative, practical and sustainable engineering solutions that improve energy generation, storage, distribution, efficiency and environmental sustainability.
+</p>
+
+<h3>Eligible Problem Areas</h3>
+
+<ul>
+<li>Renewable Energy Systems (Solar, Wind, Biomass, Hydro, Geothermal)</li>
+<li>Smart Energy Management</li>
+<li>Energy Storage Systems (Battery, Supercapacitor, Hydrogen)</li>
+<li>Electric Vehicle Charging Solutions</li>
+<li>Waste-to-Energy Technologies</li>
+<li>Green Manufacturing</li>
+<li>Carbon Footprint Reduction</li>
+<li>Smart Grid Technologies</li>
+<li>Energy-efficient Buildings</li>
+<li>AI / IoT for Energy Optimization</li>
+<li>Sustainable Agriculture Energy Solutions</li>
+<li>Rural Electrification</li>
+</ul>
+
+<h3>Team Formation</h3>
+
+<ul>
+<li>Each team shall consist of 3–4 members.</li>
+<li>Students from AICTE-approved institutions are eligible.</li>
+<li>Interdisciplinary teams are encouraged.</li>
+</ul>
+
+<h3>Prototype Requirement</h3>
+
+<ul>
+<li>Working prototype, simulation, software model or proof-of-concept.</li>
+<li>No copied or commercial projects are allowed.</li>
+</ul>
+
+<h3>Innovation</h3>
+
+<ul>
+<li>Projects must be original.</li>
+<li>Solutions should address real-world sustainability challenges.</li>
+<li>Open-source libraries may be used with proper acknowledgement.</li>
+</ul>
+
+<h3>Technical Scope</h3>
+
+<ul>
+<li>Mechanical Systems</li>
+<li>Electrical Systems</li>
+<li>Electronics</li>
+<li>Internet of Things (IoT)</li>
+<li>Artificial Intelligence & Machine Learning</li>
+<li>Robotics</li>
+<li>Embedded Systems</li>
+<li>Mobile / Web Applications</li>
+<li>CAD / CAE Simulation</li>
+<li>Digital Twin Technology</li>
+</ul>
+
+<h3>Sustainability Criteria</h3>
+
+<ul>
+<li>Energy Saving</li>
+<li>Renewable Energy Utilization</li>
+<li>Pollution Reduction</li>
+<li>Carbon Emission Reduction</li>
+<li>Resource Conservation</li>
+<li>Circular Economy</li>
+<li>Sustainable Manufacturing</li>
+</ul>
+
+<h3>Deliverables</h3>
+
+<ul>
+<li>Abstract (Maximum 300 words)</li>
+<li>Problem Statement</li>
+<li>Proposed Solution</li>
+<li>PPT Presentation</li>
+<li>Working Prototype / Simulation</li>
+<li>Source Code</li>
+<li>Bill of Materials (BOM)</li>
+</ul>
+
+<h3>Safety</h3>
+
+<ul>
+<li>Unsafe electrical systems are prohibited.</li>
+<li>High-voltage equipment must be properly insulated.</li>
+<li>No hazardous chemicals or explosive materials.</li>
+<li>Teams are responsible for prototype safety.</li>
+</ul>
+
+<h3>Presentation</h3>
+
+<ul>
+<li>5 Minutes Presentation</li>
+<li>5 Minutes Question & Answer Session</li>
+</ul>
+
+<h3>General Guidelines</h3>
+
+<ul>
+<li>Bring your own laptop and required hardware.</li>
+<li>Internet access will be provided if available.</li>
+<li>Carry a valid College ID card.</li>
+<li>Plagiarism will result in immediate disqualification.</li>
+<li>Judges' decisions are final.</li>
+<li>Organizers may modify the schedule if necessary.</li>
+</ul>
+
+<h3>Expected Outcomes</h3>
+
+<ul>
+<li>Engineering Innovation</li>
+<li>Practical Problem Solving</li>
+<li>Sustainable Development</li>
+<li>Technical Excellence</li>
+<li>Team Collaboration</li>
+<li>Social & Environmental Impact</li>
+</ul>
+<div class="themeBadge" id="themeBadge">
+THEME 1
+</div>
+</section>    
+
+<!-- ====================== THEME 2 ====================== -->
+
+<section class="theme reveal" id="theme2">
+
+<h2>Theme 2 – Augmented Reality & Virtual Reality</h2>
+
+<h3>Theme</h3>
+
+<p>
+Develop innovative AR, VR or Mixed Reality (XR) solutions that solve real-world problems.
+Projects may belong to education, healthcare, gaming, manufacturing,
+smart cities, cultural heritage, training or any creative XR application.
+</p>
+
+<h3>Eligibility</h3>
+
+<ul>
+
+<li>Open to students from recognized colleges and universities.</li>
+
+<li>Each team shall consist of 3–4 members.</li>
+
+<li>Cross-disciplinary teams are encouraged.</li>
+
+</ul>
+
+<h3>Technical Guidelines</h3>
+
+<ul>
+
+<li>Projects must be completed before the hackathon.</li>
+
+<li>On-the-spot development is not allowed.</li>
+
+<li>Projects should be developed using Unity Game Engine.</li>
+
+<li>Use ARCore, ARKit or OpenXR wherever applicable.</li>
+
+<li>Explain problem statement, solution, technology and future scope.</li>
+
+</ul>
+
+<h3>Demonstration</h3>
+
+<ul>
+
+<li>VR projects will be demonstrated using Meta Quest headsets provided by organizers.</li>
+
+<li>Participants should bring laptops capable of running their VR application.</li>
+
+<li>AR projects should be demonstrated using participants' own smartphones.</li>
+
+</ul>
+
+<h3>Presentation</h3>
+
+<ul>
+
+<li>10 minutes demonstration</li>
+
+<li>Technical explanation</li>
+
+<li>Question & Answer session</li>
+
+</ul>
+
+<h3>Evaluation Criteria</h3>
+
+<table>
+
+<tr>
+
+<th>Criteria</th>
+
+<th>Weightage</th>
+
+</tr>
+
+<tr>
+
+<td>Practical Impact</td>
+
+<td>30%</td>
+
+</tr>
+
+<tr>
+
+<td>Use of AR / VR Technology</td>
+
+<td>25%</td>
+
+</tr>
+
+<tr>
+
+<td>Problem Understanding</td>
+
+<td>20%</td>
+
+</tr>
+
+<tr>
+
+<td>Innovation</td>
+
+<td>15%</td>
+
+</tr>
+
+<tr>
+
+<td>Presentation</td>
+
+<td>10%</td>
+
+</tr>
+
+</table>
+
+<h3>General Rules</h3>
+
+<ul>
+
+<li>Online registration is mandatory.</li>
+
+<li>PPT must be submitted before review.</li>
+
+<li>Projects must be original.</li>
+
+<li>Plagiarism leads to disqualification.</li>
+
+<li>Professional conduct is expected.</li>
+
+</ul>
+
+<h3>Disqualification</h3>
+
+<ul>
+
+<li>Copied work</li>
+
+<li>False claims</li>
+
+<li>Unsafe demonstrations</li>
+
+<li>Violation of event rules</li>
+
+</ul>
+<div class="themeBadge" id="themeBadge">
+THEME 2
+</div>
+</section>
+
+<!-- ====================== THEME 3 ====================== -->
+
+<section class="theme reveal" id="theme3">
+
+<h2>Theme 3 – Industry 5.0 & Industry 6.0</h2>
+
+<h3>Objective</h3>
+
+<p>
+
+Transform manufacturing using Artificial Intelligence, sustainability,
+human-machine collaboration and autonomous industrial systems.
+
+</p>
+
+<h3>Eligible Problem Areas</h3>
+
+<ul>
+
+<li>Human–Robot Collaboration</li>
+
+<li>Artificial Intelligence in Manufacturing</li>
+
+<li>Industrial Internet of Things (IIoT)</li>
+
+<li>Digital Twin</li>
+
+<li>Cybersecurity</li>
+
+<li>Predictive Maintenance</li>
+
+<li>Machine Vision</li>
+
+<li>Energy Management</li>
+
+<li>Sustainable Manufacturing</li>
+
+<li>Supply Chain Resilience</li>
+
+<li>Autonomous Manufacturing Systems</li>
+
+</ul>
+
+<h3>Team Formation</h3>
+
+<ul>
+
+<li>3–4 members per team.</li>
+
+<li>Students from AICTE approved institutions.</li>
+
+<li>Interdisciplinary teams encouraged.</li>
+
+</ul>
+
+<h3>Prototype Requirement</h3>
+
+<ul>
+
+<li>Working prototype, simulation or software model.</li>
+
+<li>No copied commercial products.</li>
+
+<li>Projects must be original.</li>
+
+</ul>
+
+<h3>Sustainability Criteria</h3>
+
+<ul>
+
+<li>Energy Saving</li>
+
+<li>Renewable Energy</li>
+
+<li>Carbon Reduction</li>
+
+<li>Pollution Reduction</li>
+
+<li>Circular Economy</li>
+
+<li>Resource Conservation</li>
+
+</ul>
+
+<h3>Deliverables</h3>
+
+<ul>
+
+<li>Abstract (300 words)</li>
+
+<li>Problem Statement</li>
+
+<li>Proposed Solution</li>
+
+<li>PPT</li>
+
+<li>Prototype</li>
+
+<li>Source Code</li>
+
+<li>Bill of Materials</li>
+
+</ul>
+
+<h3>Safety</h3>
+
+<ul>
+
+<li>No hazardous chemicals.</li>
+
+<li>No unsafe electrical systems.</li>
+
+<li>Proper insulation required.</li>
+
+<li>Teams are responsible for prototype safety.</li>
+
+</ul>
+
+<h3>Presentation</h3>
+
+<ul>
+
+<li>5 minutes Presentation</li>
+
+<li>5 minutes Q & A</li>
+
+</ul>
+
+<h3>General Guidelines</h3>
+
+<ul>
+
+<li>Bring laptop and hardware.</li>
+
+<li>Carry College ID.</li>
+
+<li>No plagiarism.</li>
+
+<li>Judges' decision is final.</li>
+
+</ul>
+
+<h3>Expected Outcomes</h3>
+
+<ul>
+
+<li>Engineering Innovation</li>
+
+<li>Technical Excellence</li>
+
+<li>Practical Problem Solving</li>
+
+<li>Sustainable Development</li>
+
+<li>Team Collaboration</li>
+
+</ul>
+<div class="themeBadge" id="themeBadge">
+THEME 3
+</div>
+</section>
+
+<center>
+
+<a href="index.html" class="back">
+
+⬅ Back to Home
+
+</a>
+
+</center>
+
+</div>
+
+<footer>
+© 2026 KRXGEN'26 | Department of Mechanical Engineering
+</footer>
+
+<script>
+
+const reveals=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+
+reveals.forEach(card=>{
+
+const top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-120){
+
+card.classList.add("active");
+
+}
+
+});
+
+});
+
+window.addEventListener("scroll",()=>{
+
+const h=document.documentElement;
+
+const scrolled=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+
+document.getElementById("progressBar").style.width=scrolled+"%";
+
+});
+
+
+</script>
+
+
+</body>
+</html>
