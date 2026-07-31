@@ -1248,13 +1248,12 @@ gap:30px;
 
 .prize-card{
 
-background:rgba(255,255,255,.05);
-
-padding:35px;
-
-border-radius:20px;
-
-transition:.4s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    text-align:center;
+    padding:25px;
 
 }
 
@@ -1265,13 +1264,21 @@ transform:translateY(-10px);
 box-shadow:0 10px 35px rgba(245,158,11,.35);
 
 }
-
+.prize-card .medal{
+    font-size:42px;
+    margin-bottom:12px;
+    display:block;
+}
 .prize-card h3{
 
-font-size:28px;
+    margin:0;
+    margin-bottom:15px;
+    color:#fbbf24;
+    font-size:2rem;
 
-color:#f59e0b;
-
+}
+.prize-card p{
+    margin:8px 0;
 }
 
 /* ================= Payment ================= */
