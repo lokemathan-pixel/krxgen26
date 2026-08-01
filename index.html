@@ -1324,56 +1324,77 @@ margin:15px 0;
 
 .contact-grid{
 
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-gap:35px;
-
-margin-top:40px;
-
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+    gap:35px;
+    margin-top:40px;
 }
 
 .contact-card{
+    position:relative;
+    overflow:hidden;
 
-background:rgba(255,255,255,.05);
+    border-radius:22px;
+    padding:35px;
 
-backdrop-filter:blur(15px);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
-border:1px solid rgba(255,255,255,.1);
+    border:2px solid rgba(56,189,248,.55);
 
-border-radius:20px;
+    box-shadow:
+        0 0 15px rgba(56,189,248,.35),
+        0 0 35px rgba(56,189,248,.20),
+        inset 0 0 25px rgba(255,255,255,.05);
 
-padding:35px;
+    transition:all .45s ease;
+}
 
-transition:.35s;
+.contact-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
 
+    background:linear-gradient(
+        rgba(8,18,35,.65),
+        rgba(8,18,35,.75)
+    );
+
+    z-index:0;
+}
+
+.contact-card>*{
+    position:relative;
+    z-index:2;
 }
 
 .contact-card:hover{
 
-transform:translateY(-8px);
+    transform:translateY(-8px);
 
-box-shadow:0 15px 35px rgba(56,189,248,.25);
+    border-color:#38bdf8;
+
+    box-shadow:
+        0 0 20px #38bdf8,
+        0 0 45px rgba(56,189,248,.65),
+        0 0 80px rgba(56,189,248,.35),
+        inset 0 0 30px rgba(255,255,255,.08);
 
 }
 
+
 .contact-card h3{
-
-color:#38bdf8;
-
-margin-bottom:25px;
-
-font-size:24px;
-
+    color:#38bdf8;
+    font-size:34px;
+    margin-bottom:28px;
+    font-family:'Orbitron',sans-serif;
 }
 
 .contact-card p{
-
-line-height:30px;
-
-color:#e2e8f0;
-
+    color:#ffffff;
+    font-size:20px;
+    line-height:2;
 }
 
 /* ================= REGISTER ================= */
@@ -2793,58 +2814,38 @@ Upload payment screenshot during registration.
 
 <div class="contact-grid">
 
-<div class="contact-card">
+<div class="contact-card"
+style="background-image:url('faculty-bg.jpg');">
 
 <h3>👨‍🏫 Faculty Coordinators</h3>
 
 <p>
-
-Mr. S. Sivananthan
-
-<br>
-
-Assistant Professor
-
-<br>
-
+Mr. S. Sivananthan<br>
+Assistant Professor<br>
 📞 +91 99522 58040
 
 <br><br>
 
-Dr. B. Prakash
-
-<br>
-
-Assistant Professor
-
-<br>
-
+Dr. B. Prakash<br>
+Assistant Professor<br>
 📞 +91 97906 33989
-
 </p>
 
 </div>
 
-<div class="contact-card">
+<div class="contact-card"
+style="background-image:url('student-bg.jpg');">
 
 <h3>👨‍🎓 Student Coordinators</h3>
 
 <p>
-
-Mr. V. Devprasaad
-
-<br>
-
+Mr. V. Devprasaad<br>
 📞 +91 63812 23980
 
 <br><br>
 
-Mr. E. Larshad
-
-<br>
-
+Mr. E. Larshad<br>
 📞 +91 90809 26625
-
 </p>
 
 </div>
