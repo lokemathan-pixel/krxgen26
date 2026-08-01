@@ -16,7 +16,6 @@
 <title>KRXGEN'26</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -314,39 +313,7 @@ nav a:hover::after{
 width:100%;
 
 }
-.card{
 
-background:var(--card);
-
-backdrop-filter:blur(18px);
-
-border:1px solid var(--border);
-
-border-radius:var(--radius);
-
-padding:30px;
-
-width:330px;
-
-margin:25px auto;
-
-box-shadow:var(--shadow);
-
-transition:.4s;
-
-}
-
-.card:hover{
-
-transform:translateY(-12px);
-
-border-color:var(--secondary);
-
-box-shadow:
-
-0 20px 50px rgba(56,189,248,.25);
-
-}
 nav a:hover{
 
 color:#5ad7ff;
@@ -646,17 +613,7 @@ overflow:hidden;
 section{
 padding:50px 20px;
 }
-.card h3{
-    color:#ffd700;
-    margin-bottom:15px;
-    font-size:24px;
-}
 
-.card p{
-    line-height:1.8;
-    font-size:16px;
-    text-align:justify;
-}
 .theme-container{
     display:flex;
     justify-content:center;
@@ -679,16 +636,270 @@ border:1px solid rgba(245,158,11,0.4);
 
     box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
-.highlights-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1200px;
-margin:auto;
+/* ================= PREMIUM HIGHLIGHT CARDS ================= */
+
+.highlight-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
 }
-.card{
-border-top:4px solid #f59e0b;
+
+.highlight-card{
+
+position:relative;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+rgba(10,18,32,.78),
+rgba(10,18,32,.82)
+),
+var(--cardbg);
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
+backdrop-filter:blur(18px);
+
+border:2px solid rgba(56,189,248,.45);
+
+border-radius:22px;
+
+padding:22px;
+
+transition:.45s;
+
+box-shadow:
+0 0 18px rgba(56,189,248,.15),
+0 0 40px rgba(0,0,0,.45);
+
 }
+.highlight-card img,
+.highlight-card h3,
+.highlight-card p{
+
+position:relative;
+
+z-index:2;
+
+}
+
+/* Dark overlay */
+
+.highlight-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(8,15,30,.72),
+        rgba(8,15,30,.82)
+    );
+
+    transition:.4s;
+}
+
+/* Glow */
+.highlight-card:hover{
+
+transform:translateY(-10px);
+
+border-color:#38bdf8;
+
+box-shadow:
+
+0 0 22px rgba(56,189,248,.6),
+
+0 0 55px rgba(245,158,11,.25);
+
+}
+
+.highlight-card:hover img{
+
+filter:
+
+brightness(.95)
+
+drop-shadow(0 0 16px #38bdf8);
+
+transform:scale(1.08);
+
+}
+.highlight-card h3{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:24px;
+
+text-align:center;
+
+color:#38bdf8;
+
+margin:18px 0;
+
+text-shadow:0 0 10px rgba(56,189,248,.35);
+
+}
+.highlight-card p{
+
+font-size:17px;
+
+line-height:32px;
+
+text-align:left;
+
+color:#f1f5f9;
+
+font-weight:500;
+
+}
+/* Content */
+.highlight-content{
+
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+
+    margin-top:20px;
+    padding:0;
+
+    text-align:center;
+
+}
+
+.highlight-content h3{
+
+    color:#38bdf8;
+
+    font-size:28px;
+
+    text-align:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+    margin-top:16px;
+    margin-bottom:15px;
+
+}
+
+.highlight-content p{
+
+    color:#e2e8f0;
+
+    font-size:18px;
+
+    line-height:30px;
+
+    text-align:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:80px;
+
+    margin:0;
+
+}
+/* Section */
+.highlights-section{
+    position: relative;
+    padding: 40px 60px 60px;
+}
+
+/* Heading */
+.highlights-section h2{
+    position: relative;
+    z-index: 100;
+    margin-bottom: 45px;
+    color: #37c9ff;
+    font-size: 3rem;
+    text-shadow:
+        0 0 10px rgba(0,200,255,.8),
+        0 0 25px rgba(0,180,255,.4);
+}
+
+/* Cards Container */
+.highlights-container{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    /* This is the important part */
+    margin-top: 40px;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* Top Image */
+
+.highlight-card img{
+
+width:90px;
+
+height:90px;
+
+display:block;
+
+margin:0 auto 20px;
+
+padding:8px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:18px;
+
+filter:
+
+brightness(.82)
+
+contrast(.95)
+
+drop-shadow(0 0 8px rgba(56,189,248,.35));
+
+transition:.4s;
+
+}
+
+.highlight-card:nth-child(1){
+    background-image:url("idea-bg.jpg");
+}
+
+.highlight-card:nth-child(2){
+    background-image:url("prototype-bg.jpg");
+}
+
+.highlight-card:nth-child(3){
+    background-image:url("mentor-bg.jpg");
+}
+
+.highlight-card:nth-child(4){
+    background-image:url("showcase-bg.jpg");
+}
+
+.highlight-card:nth-child(5){
+    background-image:url("evaluation-bj.jpg");
+}
+
+.highlight-card:nth-child(6){
+    background-image:url("prize-bg.jpg");
+}
+
 .logo-frame{
     width:120px;
     height:120px;
@@ -1140,7 +1351,42 @@ transform:translateY(-8px);
 
 }
 /* ================= Timeline ================= */
+.timeline-item{
+    background: linear-gradient(
+        135deg,
+        rgba(17,45,78,0.88),
+        rgba(24,74,120,0.82),
+        rgba(14,35,70,0.92)
+    );
 
+    border:2px solid rgba(72,212,255,.55);
+    border-radius:20px;
+
+    backdrop-filter:blur(12px);
+
+    padding:28px 32px;
+
+    box-shadow:
+        0 0 10px rgba(0,210,255,.30),
+        0 0 25px rgba(0,180,255,.18),
+        inset 0 0 20px rgba(255,255,255,.04);
+
+    transition:.4s ease;
+}
+
+.timeline-item:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+    border-color:#5be7ff;
+
+    box-shadow:
+        0 0 18px rgba(0,255,255,.55),
+        0 0 45px rgba(0,200,255,.35),
+        0 0 80px rgba(0,180,255,.20),
+        inset 0 0 25px rgba(255,255,255,.08);
+
+}
 .timeline{
 
 max-width:900px;
@@ -1150,24 +1396,107 @@ margin:auto;
 position:relative;
 
 }
+.timeline-item h3{
+
+    color:#1be8ff;
+
+    font-size:31px;
+
+    font-weight:700;
+
+    text-shadow:
+        0 0 10px rgb(70, 249, 255);
+
+}
 
 .timeline::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-left:50%;
+    left:50%;
 
-top:0;
+    top:0;
 
-width:4px;
+    width:5px;
 
-height:100%;
+    height:100%;
 
-background:#38bdf8;
+    transform:translateX(-50%);
 
-transform:translateX(-50%);
+    background:linear-gradient(
+        to bottom,
+        #6ee7ff,
+        #00d4ff,
+        #009dff
+    );
+
+    box-shadow:
+        0 0 12px #38dfff,
+        0 0 30px rgba(0,225,255,.6);
+
+}
+.timeline-item p{
+
+    color:#fbff00;
+
+    font-size:18px;
+
+    line-height:30px;
+
+    font-weight:500;
+
+}
+.timeline-item{
+    overflow:hidden;
+    position:relative;
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-40%;
+
+    width:70%;
+
+    height:300%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+
+.timeline-item:hover::before{
+
+    left:120%;
+
+}
+.timeline-item:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+    border-color:#5be7ff;
+
+    box-shadow:
+        0 0 18px rgba(0,255,255,.55),
+        0 0 45px rgba(0,200,255,.35),
+        0 0 80px rgba(0,180,255,.20),
+        inset 0 0 25px rgba(255,255,255,.08);
 
 }
 
@@ -1179,7 +1508,7 @@ padding:25px;
 
 margin:30px 0;
 
-background:rgba(255,255,255,.05);
+background:rgba(24, 42, 54, 0.836);
 
 backdrop-filter:blur(10px);
 
@@ -1238,6 +1567,7 @@ right:-38px;
 left:-38px;
 
 }
+
 
 /* ================= Prize ================= */
 
@@ -1602,6 +1932,8 @@ gap:15px;
 flex-direction:column;
 
 }
+
+
 
 .payment-container{
 
@@ -2337,14 +2669,7 @@ margin:auto;
 }
 
 
-/* Cards */
 
-.card{
-
-width:85%;
-padding:20px;
-
-}
 
 
 /* Themes Section Fix */
@@ -2461,6 +2786,137 @@ padding:25px;
 
 
 }
+.card{
+    position:relative;
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        rgba(6, 30, 56, 0.88),
+        rgba(74, 86, 97, 0.82),
+        rgba(36, 40, 48, 0.92)
+    );
+
+    backdrop-filter:blur(14px);
+
+    border:2px solid rgba(72,212,255,.45);
+    border-radius:22px;
+
+    padding:35px;
+    width:330px;
+    margin:25px auto;
+
+    transition:.45s;
+
+    box-shadow:
+        0 0 12px rgba(0,210,255,.25),
+        0 0 30px rgba(0,180,255,.15),
+        inset 0 0 20px rgba(255,255,255,.04);
+}
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:-150%;
+
+left:-60%;
+
+width:60%;
+
+height:320%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.16),
+transparent
+);
+
+transform:rotate(25deg);
+
+transition:.9s;
+
+}
+.card:hover{
+
+transform:translateY(-10px) scale(1.03);
+
+border-color:#5befff;
+
+box-shadow:
+
+0 0 20px rgba(63, 98, 98, 0.55),
+
+0 0 45px rgba(26, 34, 36, 0.637),
+
+0 0 80px rgba(10, 67, 92, 0.22),
+
+inset 0 0 25px rgba(255,255,255,.08);
+
+}
+
+.card:hover::before{
+
+left:130%;
+
+}
+.card h2{
+
+font-family:'Orbitron',sans-serif;
+
+font-size:64px;
+
+margin:0;
+
+color:#0effef;
+
+text-shadow:
+
+0 0 8px #69def9,
+
+0 0 18px rgba(82, 225, 254, 0.5);
+
+}
+.card p{
+
+margin-top:20px;
+
+font-size:22px;
+
+font-weight:500;
+
+color:#f7ff13;
+
+}
+.card::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:3px;
+
+background:linear-gradient(
+90deg,
+transparent,
+#566e79,
+#ffffff,
+#38dfff,
+transparent
+);
+
+box-shadow:
+0 0 15px #38dfff;
+
+}
 </style>
 
 </head>
@@ -2574,7 +3030,7 @@ font-weight:600;
 </p>
 
 <p style="
-font-size:18px;
+font-size:20px;
 color:#cbd5e1;
 line-height:32px;
 ">
@@ -2833,11 +3289,11 @@ Participants will work in teams to solve real-world industrial challenges under 
 
 <div class="highlight-card">
 
-<img src="images/idea.jpg">
+<img src="idea-bg.jpg">
 
 <div class="highlight-content">
 
-<h3>💡 Idea Presentation</h3>
+<h3>Idea Presentation</h3>
 
 <p>
 Present innovative engineering ideas before expert mentors.
@@ -2850,11 +3306,11 @@ Present innovative engineering ideas before expert mentors.
 
 <div class="highlight-card">
 
-<img src="images/prototype.jpg">
+<img src="prototype-bg.jpg">
 
 <div class="highlight-content">
 
-<h3>🛠 Prototype Development</h3>
+<h3>Prototype Development</h3>
 
 <p>
 Convert your ideas into functional prototypes.
@@ -2867,11 +3323,11 @@ Convert your ideas into functional prototypes.
 
 <div class="highlight-card">
 
-<img src="images/mentor.jpg">
+<img src="mentor-bg.jpg">
 
 <div class="highlight-content">
 
-<h3>🎓 Expert Mentoring</h3>
+<h3>Expert Mentoring</h3>
 
 <p>
 Receive guidance from experienced faculty and industry experts.
@@ -2884,11 +3340,11 @@ Receive guidance from experienced faculty and industry experts.
 
 <div class="highlight-card">
 
-<img src="images/showcase.jpg">
+<img src="showcase-bg.jpg">
 
 <div class="highlight-content">
 
-<h3>🚀 Prototype Showcase</h3>
+<h3>Prototype Showcase</h3>
 
 <p>
 Demonstrate your innovation before the jury panel.
@@ -2900,11 +3356,11 @@ Demonstrate your innovation before the jury panel.
 
 <div class="highlight-card">
 
-<img src="images/evaluation.jpg">
+<img src="evaluation-bj.jpg">
 
 <div class="highlight-content">
 
-<h3>🏆 Panel Evaluation</h3>
+<h3>Panel Evaluation</h3>
 
 <p>
 Projects will be evaluated by an expert jury.
@@ -2916,11 +3372,11 @@ Projects will be evaluated by an expert jury.
 
 <div class="highlight-card">
 
-<img src="images/prize.jpg">
+<img src="prize-bg.jpg">
 
 <div class="highlight-content">
 
-<h3>💰 Cash Prizes</h3>
+<h3>Cash Prizes</h3>
 
 <p>
 Win exciting prizes and recognition for your innovation.
@@ -3213,7 +3669,7 @@ K. Ramakrishnan College of Engineering
 <script>
 
 console.log("KRXGEN'26 Website Loaded");
-const eventDate = new Date("August 16, 2026 23:59:59").getTime();
+const eventDate = new Date("August 21, 2026 23:59:59").getTime();
 
 setInterval(() => {
     let now = new Date().getTime();
