@@ -2592,13 +2592,16 @@ padding:6px 8px;
 .hero-banner{
     display:flex;
     justify-content:center;
-    margin:15px 0;
+    align-items:center;
+    margin:10px 0 20px;
 }
 
 .hero-banner img{
-    width:75%;
+    width:80%;
     max-width:550px;
-    height:auto;
+    max-height:220px;
+    object-fit:contain;
+    display:block;
 }
 
 .hero-title,
@@ -2638,12 +2641,9 @@ font-size:14px;
 /* Slot Box */
 
 #slotBox{
-
-width:80%;
-margin:auto;
-
+    transform:scale(0.9);
+    margin-top:15px;
 }
-
 
 
 
