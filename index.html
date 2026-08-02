@@ -2,7 +2,6 @@
 <html>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -184,22 +183,8 @@ border-bottom:1px solid rgba(255,255,255,.08);
 box-shadow:0 8px 25px rgba(0,0,0,.35);
 
 transition:.4s;
-
-justify-content:space-between;
-padding:16px 25px;
-}
-/* Navigation Layout */
-.logo-menu{
-    display:none;
-    font-size:30px;
-    cursor:pointer;
-    color:white;
 }
 
-.nav-links{
-    display:flex;
-    gap:25px;
-}
 nav a{
 
 color:#ffffff;
@@ -2555,8 +2540,6 @@ transform:scale(1.03);
     border-radius:12px;
 }
 
-
-
 /* ================= MOBILE OPTIMIZATION ================= */
 
 @media(max-width:768px){
@@ -2569,14 +2552,9 @@ padding:12px 10px;
 gap:10px;
 
 }
-.logo-menu{
-    display:block;
+.faq-link{
+    display:none !important;
 }
-
-.nav-links{
-    display:none;
-}
-
 
 .logo-frame{
 
@@ -3003,12 +2981,6 @@ box-shadow:
 </div>
 
 <nav>
-
-<div class="logo-menu">
-☰
-</div>
-
-<div class="nav-links">
 <a href="#hero">Home</a>
 <a href="#about">About</a>
 <a href="#tracks">Themes</a>
@@ -3019,9 +2991,10 @@ box-shadow:
 <a href="#team">Contact</a>
 <a href="#register">Register</a>
 <a href="#faq">FAQ</a>
-</div>
-
 </nav>
+
+
+
 
 
 <section id="hero">
@@ -3863,14 +3836,7 @@ document.getElementById("slotBox").innerHTML=
 }
 
 });
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
 
-menuBtn.onclick = function(){
-
-mobileMenu.classList.toggle("show");
-
-};
 </script>
 
 </body>
