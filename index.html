@@ -2539,7 +2539,52 @@ transform:scale(1.03);
     margin:15px auto;
     border-radius:12px;
 }
+/* ===== MOBILE MENU ===== */
 
+.logo-menu{
+    display:none;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+    user-select:none;
+}
+
+#mobileMenu{
+    display:none;
+    position:fixed;
+    top:70px;
+    left:0;
+    width:100%;
+    background:rgba(15,23,42,.98);
+    backdrop-filter:blur(18px);
+    z-index:9999;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+#mobileMenu a{
+    display:block;
+    padding:18px;
+    color:white;
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    font-size:18px;
+}
+
+#mobileMenu a:hover{
+    background:rgba(56,189,248,.15);
+}
+
+@media(max-width:768px){
+
+    .logo-menu{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+}
 /* ================= MOBILE OPTIMIZATION ================= */
 
 @media(max-width:768px){
@@ -2981,6 +3026,10 @@ box-shadow:
 </div>
 
 <nav>
+
+<div class="logo-menu" id="menuBtn">☰</div>
+
+<div class="nav-links">
 <a href="#hero">Home</a>
 <a href="#about">About</a>
 <a href="#tracks">Themes</a>
@@ -2991,7 +3040,22 @@ box-shadow:
 <a href="#team">Contact</a>
 <a href="#register">Register</a>
 <a href="#faq">FAQ</a>
+</div>
+
 </nav>
+
+<div id="mobileMenu">
+<a href="#hero">Home</a>
+<a href="#about">About</a>
+<a href="#tracks">Themes</a>
+<a href="#highlights">Highlights</a>
+<a href="#timeline">Timeline</a>
+<a href="#payment">Payment</a>
+<a href="#prizes">Prizes</a>
+<a href="#team">Contact</a>
+<a href="#register">Register</a>
+<a href="#faq">FAQ</a>
+</div>
 
 
 
@@ -3836,7 +3900,24 @@ document.getElementById("slotBox").innerHTML=
 }
 
 });
+// Mobile Menu Toggle
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
 
+menuBtn.addEventListener("click", function () {
+    if (mobileMenu.style.display === "block") {
+        mobileMenu.style.display = "none";
+    } else {
+        mobileMenu.style.display = "block";
+    }
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.style.display = "none";
+    });
+});
 </script>
 
 </body>
