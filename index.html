@@ -168,7 +168,7 @@ top:0;
 z-index:1000;
 
 display:flex;
-justify-content:center;
+
 align-items:center;
 gap:25px;
 
@@ -184,8 +184,22 @@ border-bottom:1px solid rgba(255,255,255,.08);
 box-shadow:0 8px 25px rgba(0,0,0,.35);
 
 transition:.4s;
+
+justify-content:space-between;
+padding:16px 25px;
+}
+/* Navigation Layout */
+.logo-menu{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+    color:white;
 }
 
+.nav-links{
+    display:flex;
+    gap:25px;
+}
 nav a{
 
 color:#ffffff;
@@ -2541,91 +2555,7 @@ transform:scale(1.03);
     border-radius:12px;
 }
 
-#menuBtn{
-display:none;
-}
 
-#mobileMenu{
-display:none;
-}
-
-@media(max-width:768px){
-
-nav a{
-display:none;
-}
-
-#menuBtn{
-
-display:block;
-
-margin:auto;
-
-padding:12px 28px;
-
-border:none;
-
-border-radius:30px;
-
-background:#38bdf8;
-
-color:white;
-
-font-size:17px;
-
-font-weight:600;
-
-cursor:pointer;
-
-}
-
-#mobileMenu{
-
-display:none;
-
-position:absolute;
-
-top:100%;
-
-left:0;
-
-width:100%;
-
-background:#0f172a;
-
-box-shadow:0 10px 25px rgba(0,0,0,.4);
-
-z-index:999;
-
-}
-
-#mobileMenu a{
-
-display:block;
-
-padding:16px;
-
-text-decoration:none;
-
-color:white;
-
-border-bottom:1px solid rgba(255,255,255,.08);
-
-}
-
-#mobileMenu a:hover{
-
-background:#38bdf8;
-
-}
-
-#mobileMenu.show{
-
-display:block;
-
-}
-
-}
 
 /* ================= MOBILE OPTIMIZATION ================= */
 
@@ -2638,6 +2568,13 @@ display:block;
 padding:12px 10px;
 gap:10px;
 
+}
+.logo-menu{
+    display:block;
+}
+
+.nav-links{
+    display:none;
 }
 
 
@@ -3066,32 +3003,26 @@ box-shadow:
 </div>
 
 <nav>
-<a href="#hero">Home</a>
-<a href="#about">About</a>
-<a href="#tracks">Themes</a>
-<a href="#highlights">Highlights</a>
-<a href="#timeline">Timeline</a>
-<a href="#payment">Payment</a>
-<a href="#prizes">Prizes</a>
-<a href="#team">Contact</a>
-<a href="#register">Register</a>
-<a href="#faq">FAQ</a>
-<button id="menuBtn">☰ Menu</button>
-</nav>
-<div id="mobileMenu">
 
-<a href="#hero">Home</a>
-<a href="#about">About</a>
-<a href="#tracks">Themes</a>
-<a href="#highlights">Highlights</a>
-<a href="#timeline">Timeline</a>
-<a href="#payment">Payment</a>
-<a href="#prizes">Prizes</a>
-<a href="#team">Contact</a>
-<a href="#register">Register</a>
-<a href="#faq">FAQ</a>
-
+<div class="logo-menu">
+☰
 </div>
+
+<div class="nav-links">
+<a href="#hero">Home</a>
+<a href="#about">About</a>
+<a href="#tracks">Themes</a>
+<a href="#highlights">Highlights</a>
+<a href="#timeline">Timeline</a>
+<a href="#payment">Payment</a>
+<a href="#prizes">Prizes</a>
+<a href="#team">Contact</a>
+<a href="#register">Register</a>
+<a href="#faq">FAQ</a>
+</div>
+
+</nav>
+
 
 <section id="hero">
 
