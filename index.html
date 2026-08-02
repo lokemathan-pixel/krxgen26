@@ -2540,6 +2540,92 @@ transform:scale(1.03);
     border-radius:12px;
 }
 
+#menuBtn{
+display:none;
+}
+
+#mobileMenu{
+display:none;
+}
+
+@media(max-width:768px){
+
+nav a{
+display:none;
+}
+
+#menuBtn{
+
+display:block;
+
+margin:auto;
+
+padding:12px 28px;
+
+border:none;
+
+border-radius:30px;
+
+background:#38bdf8;
+
+color:white;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+#mobileMenu{
+
+display:none;
+
+position:absolute;
+
+top:100%;
+
+left:0;
+
+width:100%;
+
+background:#0f172a;
+
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+
+z-index:999;
+
+}
+
+#mobileMenu a{
+
+display:block;
+
+padding:16px;
+
+text-decoration:none;
+
+color:white;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+#mobileMenu a:hover{
+
+background:#38bdf8;
+
+}
+
+#mobileMenu.show{
+
+display:block;
+
+}
+
+}
+
 /* ================= MOBILE OPTIMIZATION ================= */
 
 @media(max-width:768px){
@@ -2552,9 +2638,7 @@ padding:12px 10px;
 gap:10px;
 
 }
-.faq-link{
-    display:none;
-}
+
 
 .logo-frame{
 
@@ -2990,9 +3074,23 @@ box-shadow:
 <a href="#prizes">Prizes</a>
 <a href="#team">Contact</a>
 <a href="#register">Register</a>
-<a href="#faq" class="faq-link">FAQ</a>
+<a href="#faq">FAQ</a>
+<button id="menuBtn">☰ Menu</button>
 </nav>
+<div id="mobileMenu">
 
+<a href="#hero">Home</a>
+<a href="#about">About</a>
+<a href="#tracks">Themes</a>
+<a href="#highlights">Highlights</a>
+<a href="#timeline">Timeline</a>
+<a href="#payment">Payment</a>
+<a href="#prizes">Prizes</a>
+<a href="#team">Contact</a>
+<a href="#register">Register</a>
+<a href="#faq">FAQ</a>
+
+</div>
 
 <section id="hero">
 
@@ -3833,7 +3931,14 @@ document.getElementById("slotBox").innerHTML=
 }
 
 });
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
 
+menuBtn.onclick = function(){
+
+mobileMenu.classList.toggle("show");
+
+};
 </script>
 
 </body>
