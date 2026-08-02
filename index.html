@@ -2,7 +2,6 @@
 <html>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2545,28 +2544,6 @@ transform:scale(1.03);
 
 @media(max-width:768px){
 
-section{
-    padding:30px 15px;
-}
-
-section h2{
-    margin-bottom:20px;
-}
-.hero-banner img{
-    width:100%;
-    height:auto;
-    max-height:220px;
-    object-fit:contain;
-}
-html,
-body{
-    overflow-x:hidden;
-}
-
-*{
-    box-sizing:border-box;
-}
-
 /* College Header */
 
 .college-header{
@@ -2574,6 +2551,9 @@ body{
 padding:12px 10px;
 gap:10px;
 
+}
+.faq-link{
+    display:none !important;
 }
 
 .logo-frame{
@@ -2940,55 +2920,6 @@ box-shadow:
 0 0 15px #38dfff;
 
 }
- /* ===== Mobile Menu ===== */
-
-.menu-toggle{
-display:none;
-font-size:30px;
-cursor:pointer;
-color:white;
-font-weight:bold;
-}
-
-#mobileMenu{
-display:none;
-position:fixed;
-top:70px;
-left:0;
-width:100%;
-background:rgba(15,23,42,.98);
-backdrop-filter:blur(18px);
-z-index:999;
-}
-
-#mobileMenu a{
-display:block;
-padding:16px;
-color:white;
-text-decoration:none;
-border-bottom:1px solid rgba(255,255,255,.08);
-font-weight:600;
-}
-
-#mobileMenu a:hover{
-background:rgba(56,189,248,.15);
-}
-
-@media(max-width:768px){
-
-.menu-toggle{
-display:block;
-}
-
-.nav-links{
-display:none;
-}
-
-nav{
-justify-content:space-between;
-}
-
-}
 </style>
 
 </head>
@@ -3050,12 +2981,6 @@ justify-content:space-between;
 </div>
 
 <nav>
-
-<div class="menu-toggle" onclick="toggleMenu()">
-☰
-</div>
-
-<div class="nav-links">
 <a href="#hero">Home</a>
 <a href="#about">About</a>
 <a href="#tracks">Themes</a>
@@ -3066,23 +2991,10 @@ justify-content:space-between;
 <a href="#team">Contact</a>
 <a href="#register">Register</a>
 <a href="#faq">FAQ</a>
-</div>
-
 </nav>
-<div id="mobileMenu">
 
-<a href="#hero">Home</a>
-<a href="#about">About</a>
-<a href="#tracks">Themes</a>
-<a href="#highlights">Highlights</a>
-<a href="#timeline">Timeline</a>
-<a href="#payment">Payment</a>
-<a href="#prizes">Prizes</a>
-<a href="#team">Contact</a>
-<a href="#register">Register</a>
-<a href="#faq">FAQ</a>
 
-</div>
+
 
 
 <section id="hero">
@@ -3926,20 +3838,7 @@ document.getElementById("slotBox").innerHTML=
 });
 
 </script>
-<script>
-function toggleMenu(){
 
-const menu = document.getElementById("mobileMenu");
-
-if(menu.style.display === "block"){
-    menu.style.display = "none";
-}
-else{
-    menu.style.display = "block";
-}
-
-}
-</script>
 </body>
 
 </html>
