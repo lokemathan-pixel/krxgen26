@@ -623,19 +623,161 @@ padding:50px 20px;
 }
 
 .theme-card{
-    background:rgba(245,158,11,0.15);
+    --glow:#38bdf8;
 
-border:1px solid rgba(245,158,11,0.4);
-    backdrop-filter:blur(8px);
+    position:sticky;
+    top:80px;
 
-    width:320px;
-    min-height:350px;
+    width:100%;
+    max-width:1400px;
+    height:88vh;
 
-    padding:20px;
+    margin:0 auto 80px;
 
-    border-radius:15px;
+    border-radius:30px;
+    overflow:hidden;
 
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    border:2px solid rgba(255,255,255,.08);
+
+    transition:.5s ease;
+
+    box-shadow:
+    0 0 18px color-mix(in srgb, var(--glow) 35%, transparent),
+    0 0 40px rgba(0,0,0,.45);
+}
+
+.theme-card{
+    --glow:#38bdf8;
+
+    position:sticky;
+    top:80px;
+
+    width:100%;
+    max-width:1400px;
+    height:88vh;
+
+    margin:0 auto 80px;
+
+    border-radius:30px;
+    overflow:hidden;
+
+    border:2px solid rgba(255,255,255,.08);
+
+    transition:.55s ease;
+
+    box-shadow:
+        0 0 12px color-mix(in srgb, var(--glow) 30%, transparent),
+        0 0 25px color-mix(in srgb, var(--glow) 20%, transparent),
+        0 25px 60px rgba(0,0,0,.45);
+
+    animation:themeGlow 5s ease-in-out infinite;
+}
+
+/* Animated glowing border */
+.theme-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:30px;
+    padding:2px;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent,
+            var(--glow),
+            rgba(255,255,255,.8),
+            var(--glow),
+            transparent
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+            mask-composite:exclude;
+
+    opacity:.35;
+    transition:.5s;
+    pointer-events:none;
+}
+
+/* Soft outer aura */
+.theme-card::after{
+    content:"";
+    position:absolute;
+    inset:-40px;
+    background:radial-gradient(
+        circle,
+        color-mix(in srgb, var(--glow) 30%, transparent) 0%,
+        transparent 70%
+    );
+    filter:blur(40px);
+    opacity:0;
+    transition:.5s;
+    pointer-events:none;
+}
+
+.theme-card:hover{
+
+    transform:translateY(-10px) scale(1.01);
+
+    border-color:var(--glow);
+
+    box-shadow:
+        0 0 20px var(--glow),
+        0 0 45px color-mix(in srgb,var(--glow) 70%,transparent),
+        0 0 90px color-mix(in srgb,var(--glow) 50%,transparent),
+        0 0 150px color-mix(in srgb,var(--glow) 25%,transparent),
+        0 35px 80px rgba(0,0,0,.55);
+}
+
+.theme-card:hover::before{
+    opacity:1;
+}
+
+.theme-card:hover::after{
+    opacity:1;
+}
+
+.theme-card:hover img{
+    transform:scale(1.08);
+    filter:brightness(.55) saturate(1.2);
+}
+
+.theme-card:hover h3{
+    color:var(--glow);
+    text-shadow:
+        0 0 10px var(--glow),
+        0 0 30px var(--glow),
+        0 0 60px var(--glow);
+}
+.theme-card:nth-of-type(1){
+    --glow:#22c55e;   /* Green */
+}
+
+.theme-card:nth-of-type(2){
+    --glow:#38bdf8;   /* Blue */
+}
+
+.theme-card:nth-of-type(3){
+    --glow:#0bf5f1;   /* Orange */
+   
+}
+
+@keyframes themeGlow{
+    0%,100%{
+        box-shadow:
+            0 0 12px color-mix(in srgb,var(--glow) 25%,transparent),
+            0 25px 60px rgba(0,0,0,.45);
+    }
+    50%{
+        box-shadow:
+            0 0 20px color-mix(in srgb,var(--glow) 45%,transparent),
+            0 0 45px color-mix(in srgb,var(--glow) 25%,transparent),
+            0 25px 60px rgba(0,0,0,.45);
+    }
 }
 /* ================= PREMIUM HIGHLIGHT CARDS ================= */
 
@@ -648,7 +790,7 @@ border:1px solid rgba(245,158,11,0.4);
 .highlight-card{
 
 position:relative;
-
+--glow:#3858f8;
 overflow:hidden;
 
 background:
@@ -998,318 +1140,97 @@ section h2{
 ==================================================*/
 
 .themes-section{
-    height:250vh;
-    position:relative;
-    background:transparent;
-    margin-bottom:0;
-    padding-bottom:20px;
+    padding:80px 8%;
 }
 
 .section-title{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:60px;
+}
 
-font-size:55px;
+.theme-card{
 
-font-family:'Orbitron';
+    position:sticky;
+    top:80px;
 
-text-align:center;
+    height:75vh;
 
-margin-bottom:25px;
+    margin-bottom:80px;
 
-color:white;
+    border-radius:30px;
 
-text-shadow:0 0 25px rgba(56,189,248,.4);
+    overflow:hidden;
+
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
 
 }
 
-.themes-sticky{
+.theme-card img{
 
-position:sticky;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 
-top:0;
+    filter:brightness(.45);
 
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-overflow:hidden;
+    transition:1s;
 
 }
 
-.themes-container{
+.theme-card:hover img{
 
-position:relative;
-
-width:85%;
-
-max-width:1200px;
-
-height:650px;
+    transform:scale(1.08);
 
 }
 
-.theme-panel{
+.theme-overlay{
 
-position:absolute;
+    position:absolute;
 
-inset:0;
+    left:60px;
+    bottom:60px;
 
-overflow:hidden;
-
-border-radius:30px;
-
-background:#111827;
-
-opacity:0;
-
-transform:translateY(120px);
-
-transition:
-
-opacity .8s,
-
-transform .8s;
-
-box-shadow:
-
-0 35px 80px rgba(0,0,0,.45);
+    color:white;
 
 }
 
-.theme-panel.active{
+.theme-overlay span{
 
-opacity:1;
+    font-size:90px;
 
-transform:translateY(0);
+    opacity:.15;
 
-z-index:5;
-
-}
-.theme-image{
-
-position:absolute;
-
-width:100%;
-
-height:100%;
-
-overflow:hidden;
+    font-family:Orbitron;
 
 }
 
-img{
-max-width:100%;
-height:auto;
-}
+.theme-overlay h3{
 
-.theme-image img{
+    font-size:42px;
 
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-filter:
-
-brightness(.45);
-
-transition:1.2s;
+    margin:10px 0;
 
 }
 
-.theme-panel.active img{
+.theme-overlay p{
 
-transform:scale(1.08);
+    font-size:20px;
 
-}
-
-.theme-image::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-rgba(15,23,42,.82),
-
-rgba(15,23,42,.2)
-
-);
-
-}
-.theme-panel img{
-
-transition:
-
-transform 1.4s ease,
-
-filter 1s;
+    line-height:34px;
 
 }
 
-.active img{
-
-transform:scale(1.08);
-
-filter:brightness(.45);
-
+.theme-card:nth-child(2){
+    transform:rotate(-1deg);
 }
 
-.previous img{
-
-transform:scale(1.18);
-
-filter:brightness(.25);
-
+.theme-card:nth-child(3){
+    transform:rotate(1deg);
 }
 
-.theme-text{
-
-position:absolute;
-
-left:70px;
-
-bottom:70px;
-
-z-index:10;
-
-max-width:550px;
-
-}
-
-.theme-number{
-
-display:block;
-
-font-size:90px;
-
-font-family:'Orbitron';
-
-color:rgba(255,255,255,.12);
-
-margin-bottom:15px;
-
-}
-
-.theme-text h3{
-
-font-size:42px;
-
-margin-bottom:20px;
-
-color:white;
-
-font-family:'Orbitron';
-
-}
-
-.theme-text p{
-
-font-size:20px;
-
-line-height:38px;
-
-color:#dbeafe;
-
-}
-
-.theme-panel::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:-120%;
-
-width:45%;
-
-height:100%;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-transparent,
-
-rgba(255,255,255,.18),
-
-transparent
-
-);
-
-transform:skewX(-25deg);
-
-transition:1s;
-
-}
-
-.theme-panel:hover::before{
-
-left:140%;
-
-}
-
-.theme-panel{
-
-border:1px solid rgba(255,255,255,.08);
-
-backdrop-filter:blur(20px);
-
-}
-
-.theme-panel:hover{
-
-box-shadow:
-
-0 0 40px rgba(56,189,248,.25),
-
-0 0 70px rgba(245,158,11,.18);
-
-}
-
-.previous{
-
-opacity:.25;
-
-transform:translateY(-120%) scale(.92);
-
-z-index:1;
-
-}
-
-.next{
-
-opacity:0;
-
-transform:translateY(120%);
-
-z-index:0;
-
-}
-
-.active{
-
-opacity:1;
-
-transform:translateY(0);
-
-z-index:5;
-
+.theme-card:nth-child(4){
+    transform:rotate(-1deg);
 }
 /* ---------- Highlights ---------- */
 
@@ -2729,47 +2650,11 @@ margin:auto;
 /* Themes Section Fix */
 
 .themes-section{
-height:220vh;
+height:auto;
 position:relative;
 background:transparent;
-margin-bottom:0;
-padding-bottom:0;
-}
-
-
-.themes-sticky{
-
-position:relative;
-height:auto;
-
-}
-
-
-.themes-container{
-
-height:auto;
-width:95%;
-
-}
-
-
-.theme-panel{
-
-position:relative;
-opacity:1;
-transform:none !important;
-
-margin-bottom:30px;
-
-height:420px;
-
-}
-
-
-.theme-panel:not(.active){
-
-display:none;
-
+padding-bottom:20px;
+margin-bottom:20px;
 }
 
 
@@ -3259,84 +3144,46 @@ Participants will work in teams to solve real-world industrial challenges under 
 
 <h2 class="section-title">Innovation Themes</h2>
 
-<div class="themes-sticky">
-
-    <div class="themes-container">
-
-        <!-- Theme 1 -->
-        <div class="theme-panel active">
-
-            <div class="theme-image">
-                <img src="sustainable energy.jpg" alt="">
-            </div>
-
-            <div class="theme-text">
-
-                <span class="theme-number">01</span>
-
-                <h3>Sustainable Energy Technology</h3>
-
-                <p>
-                    Renewable Energy<br>
-                    Smart Grid<br>
-                    Green Engineering<br>
-                    Future Power Systems
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- Theme 2 -->
-        <div class="theme-panel">
-
-            <div class="theme-image">
-                <img src="ar_vr.jpg" alt="">
-            </div>
-
-            <div class="theme-text">
-
-                <span class="theme-number">02</span>
-
-                <h3>Augmented Reality & Virtual Reality</h3>
-
-                <p>
-                    Digital Twin<br>
-                    Immersive Learning<br>
-                    Smart Manufacturing<br>
-                    Simulation Technology
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- Theme 3 -->
-        <div class="theme-panel">
-
-            <div class="theme-image">
-                <img src="indust_6.jpg" alt="">
-            </div>
-
-            <div class="theme-text">
-
-                <span class="theme-number">03</span>
-
-                <h3>Industrial Development 5.0 & 6.0</h3>
-
-                <p>
-                    AI Automation<br>
-                    Smart Factory<br>
-                    Robotics<br>
-                    Industrial IoT
-                </p>
-
-            </div>
-
-        </div>
-
+<div class="theme-card active">
+    <img src="sustainable energy.jpg">
+    <div class="theme-overlay">
+        <span>01</span>
+        <h3>Sustainable Energy Technology</h3>
+        <p>
+            Renewable Energy<br>
+            Smart Grid<br>
+            Green Engineering<br>
+            Future Power Systems
+        </p>
     </div>
+</div>
 
+<div class="theme-card">
+    <img src="ar_vr.jpg">
+    <div class="theme-overlay">
+        <span>02</span>
+        <h3>Augmented Reality & Virtual Reality</h3>
+        <p>
+            Digital Twin<br>
+            Immersive Learning<br>
+            Smart Manufacturing<br>
+            Simulation Technology
+        </p>
+    </div>
+</div>
+
+<div class="theme-card">
+    <img src="indust_6.jpg">
+    <div class="theme-overlay">
+        <span>03</span>
+        <h3>Industrial Development 5.0 & 6.0</h3>
+        <p>
+            AI Automation<br>
+            Smart Factory<br>
+            Robotics<br>
+            Industrial IoT
+        </p>
+    </div>
 </div>
 
 </section>
@@ -3804,69 +3651,6 @@ loader.style.visibility="hidden";
         PREMIUM SCROLL THEMES
 ==================================================*/
 
-const themeSection = document.querySelector(".themes-section");
-const panels = document.querySelectorAll(".theme-panel");
-
-let currentPanel = 0;
-let ticking = false;
-
-function updatePanels(index){
-
-    panels.forEach((panel,i)=>{
-
-        panel.classList.remove("active","previous","next");
-
-        if(i < index){
-            panel.classList.add("previous");
-        }
-        else if(i > index){
-            panel.classList.add("next");
-        }
-        else{
-            panel.classList.add("active");
-        }
-
-    });
-
-}
-
-updatePanels(0);
-
-window.addEventListener("scroll",()=>{
-
-    if(ticking) return;
-
-    ticking=true;
-
-    requestAnimationFrame(()=>{
-
-        const rect = themeSection.getBoundingClientRect();
-
-        const sectionHeight = themeSection.offsetHeight-window.innerHeight;
-
-        const progress = Math.min(
-            Math.max(-rect.top/sectionHeight,0),
-            1
-        );
-
-        const index = Math.min(
-            panels.length-1,
-            Math.floor(progress*panels.length)
-        );
-
-        if(index!==currentPanel){
-
-            currentPanel=index;
-
-            updatePanels(currentPanel);
-
-        }
-
-        ticking=false;
-
-    });
-
-});
 
 fetch("https://script.google.com/macros/s/AKfycbw4k0Fjzh_FmJ9H0e6_cb_JQyBpIlYxUIFchNuiraa7oWAXQbWfAQJ_gxYQjTTzlu9XFA/exec")
 .then(r=>r.json())
