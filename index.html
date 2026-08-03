@@ -3672,8 +3672,14 @@ fetch("https://script.google.com/macros/s/AKfycbw4k0Fjzh_FmJ9H0e6_cb_JQyBpIlYxUI
 
 if(data.closed){
 
-document.getElementById("slotBox").innerHTML=
-"<h2 style='color:red'>🔴 Registration Closed</h2>";
+// Hide everything related to registration
+document.getElementById("slotBox").style.display = "none";
+
+document.querySelectorAll("button").forEach(btn=>{
+    if(btn.textContent.includes("Register Now")){
+        btn.style.display = "none";
+    }
+});
 
 }
 else{
@@ -3681,7 +3687,7 @@ else{
 document.getElementById("slotBox").innerHTML=
 `
 <h2>Remaining Slots</h2>
-<h1>${data.remaining}/30</h1>
+<h1>${data.remaining}</h1>
 `;
 
 }
