@@ -3667,30 +3667,37 @@ loader.style.visibility="hidden";
 
 
 fetch("https://script.google.com/macros/s/AKfycbw4k0Fjzh_FmJ9H0e6_cb_JQyBpIlYxUIFchNuiraa7oWAXQbWfAQJ_gxYQjTTzlu9XFA/exec")
-.then(r=>r.json())
-.then(data=>{
+.then(r => r.json())
+.then(data => {
 
-if(data.closed){
+    const slotBox = document.getElementById("slotBox");
 
-// Hide everything related to registration
-document.getElementById("slotBox").style.display = "none";
+    if (data.closed) {
 
-document.querySelectorAll("button").forEach(btn=>{
-    if(btn.textContent.includes("Register Now")){
-        btn.style.display = "none";
+        slotBox.innerHTML = `
+            <h2 style="color:#ff4d4d;margin:0;">
+                🔴 Registration Closed
+            </h2>
+            <p style="margin-top:10px;color:#ffffff;font-size:16px;">
+                Maximum of <b>30 teams</b> have registered.
+            </p>
+        `;
+
+        // Hide Register buttons
+        document.querySelectorAll("button").forEach(btn => {
+            if (btn.textContent.includes("Register Now")) {
+                btn.style.display = "none";
+            }
+        });
+
+    } else {
+
+        slotBox.innerHTML = `
+            <h2>Remaining Slots</h2>
+            <h1>${data.remaining}</h1>
+        `;
+
     }
-});
-
-}
-else{
-
-document.getElementById("slotBox").innerHTML=
-`
-<h2>Remaining Slots</h2>
-<h1>${data.remaining}</h1>
-`;
-
-}
 
 });
 // Mobile Menu Toggle
