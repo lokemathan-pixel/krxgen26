@@ -2871,6 +2871,11 @@ box-shadow:
     font-size:14px;
     border-bottom:1px solid rgba(56,189,248,.25);
 }
+
+/* Hide remaining slots until 5 or fewer are left */
+#slotBox {
+    display: none;
+}
 </style>
 
 </head>
@@ -3641,41 +3646,59 @@ loader.style.visibility="hidden";
         PREMIUM SCROLL THEMES
 ==================================================*/
 
+function checkSlots(){
 
-fetch("https://script.google.com/macros/s/AKfycbw4k0Fjzh_FmJ9H0e6_cb_JQyBpIlYxUIFchNuiraa7oWAXQbWfAQJ_gxYQjTTzlu9XFA/exec")
-.then(r => r.json())
-.then(data => {
+    fetch("https://script.google.com/macros/s/AKfycbzZBzIx6j0a3lWu5V3VF_1Ihf9aNmx7UHLoFnDRlM62OWVKIU-j_D5uwB74yt2iJGIp/exec")
+    .then(r => r.json())
+    .then(data => {
 
-    const slotBox = document.getElementById("slotBox");
+        const slotBox = document.getElementById("slotBox");
 
-    if (data.closed) {
+        if(data.closed){
 
-        slotBox.innerHTML = `
-            <h2 style="color:#ff4d4d;margin:0;">
-                🔴 Registration Closed
-            </h2>
-            <p style="margin-top:10px;color:#ffffff;font-size:16px;">
-                Maximum of <b>30 teams</b> have registered.
-            </p>
-        `;
+            slotBox.style.display = "block";
 
-        // Hide Register buttons
-        document.querySelectorAll("button").forEach(btn => {
-            if (btn.textContent.includes("Register Now")) {
-                btn.style.display = "none";
-            }
-        });
+            slotBox.innerHTML = `
+                <h2 style="color:#ff4d4d;margin:0;">
+                    🔴 Registration Closed
+                </h2>
 
-    } else {
+                <p style="margin-top:10px;color:white;font-size:16px;">
+                    Maximum of <b>30 teams</b> have registered.
+                </p>
+            `;
 
-        slotBox.innerHTML = `
-            <h2>Remaining Slots</h2>
-            <h1>${data.remaining}</h1>
-        `;
+            return;
+        }
 
-    }
+        if(data.remaining <= 5){
 
-});
+            slotBox.style.display = "block";
+
+            slotBox.innerHTML = `
+                <h2>⚡ Only ${data.remaining} Slots Left!</h2>
+                <p>Register now before all slots are filled.</p>
+            `;
+
+        }else{
+
+            // Keep it hidden
+            slotBox.style.display = "none";
+
+        }
+
+    })
+    .catch(error => {
+        console.log("Slot check error:", error);
+    });
+}
+
+
+/* Check immediately */
+checkSlots();
+
+/* Check again every 30 seconds */
+setInterval(checkSlots, 30000);
 // Mobile Menu Toggle
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
